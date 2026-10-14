@@ -1,0 +1,54 @@
+GINDER — WE BROUGHT THE STORM INSIDE AND CALLED IT GOSPEL
+Merklevering v01 · 14.10.2026
+
+
+BEGIN HIER
+  GINDER_stijlgids.html
+  Eén bestand, werkt offline, dubbelklik volstaat — geen internet, geen installatie.
+  Twaalf hoofdstukken: de wereld, logotype, kleur, typografie, beeldtaal, artwork &
+  croppen, Spotify, Instagram, Facebook, export & workflow, stem & tekst, en de
+  twaalf geboden. Alles wat je nodig hebt om een post te maken zonder te twijfelen.
+
+
+WAT ZIT ERIN
+
+  00_brand/
+    GINDER_logotype_kleur.png     het logotype, transparant, 1673 × 434
+    GINDER_logotype_goud.png      1-kleur goud  — voor donkere grond
+    GINDER_logotype_bot.png       1-kleur bot   — voor donkere grond
+    GINDER_logotype_zwart.png     1-kleur zwart — voor lichte grond
+    GINDER_zegel_1500.png         het beeldmerk, avatar voor alle platformen
+    GINDER_palet.txt              alle hexwaarden, contrastregels, verdeling
+    GINDER_songteksten.txt        de drie teksten, één bron, tikfout gecorrigeerd
+
+  02_crops/
+    12 goedgekeurde uitsnedes: 3 tracks × 1:1, 4:5, 3:4, 9:16, op 1080 px
+    de drie 1:1-covers ook op 3000 px (dat is het bestand voor de distributeur)
+    hires/   dezelfde 9 verticale crops op 2160 px, voor print en video
+    GINDER_crops_overzicht.jpg    alles in één blad
+    LEESMIJ.txt                   welk bestand waar hoort
+
+
+WAT ER NIET IN ZIT, MAAR WEL IN DE MAPSTRUCTUUR HOORT
+
+  01_masters/   jullie eigen artwork op volle resolutie. Zet die er zelf bij, dan is
+                deze map een volledige overdracht voor een ontwerper of label.
+  Fonts         Pirata One, Archivo Black, Inter, Martian Mono — via de links in
+                hoofdstuk IV. Gratis, bewaar een kopie in 00_brand/.
+
+
+DE VIJF DINGEN DIE NOG MOETEN GEBEUREN (hoofdstuk XII)
+
+  1. Drie Canvassen maken — 4 tot 6 seconden, stil, naadloze loop, vertrekkend van
+     de 9:16-crops die klaarliggen.
+  2. Logotype vectoriseren of opnieuw renderen op minstens 6000 px breed. De
+     huidige 1673 px volstaat niet voor posters, vinyl, backdrops of borduur.
+  3. Zegel-avatar op alle drie de platformen zetten.
+  4. Songteksten syncen via Musixmatch — account nu al aanmaken, verificatie duurt
+     enkele werkdagen (hoofdstuk VII).
+  5. Persfoto's in dit palet schieten: egale grondkleur, frontaal, geen bakstenen muur.
+
+
+REGEL ÉÉN
+  Staat een bestand niet in deze structuur, dan bestaat het niet — ook niet in een
+  chatgesprek.

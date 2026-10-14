@@ -1,0 +1,27 @@
+GINDER — KLEURPALET v1.0
+Gesampled uit de drie EP-artworks. sRGB.
+
+KERN
+Void Black     #0B0A09   rgb(11,10,9)        basis, 50-60% van elk frame
+Blood Red      #E42E22   rgb(228,46,34)      signaal, max 15%
+Offer Gold     #C08A3B   rgb(192,138,59)     logotype, haarlijnen, 5-10%
+Bone           #D4BA96   rgb(212,186,150)    papiergrond + bodytekst op zwart
+
+GRONDEN PER TRACK
+Priest Blush   #DD8B72   rgb(221,139,114)    I  — Göbekli Tepe
+Bone           #D4BA96   rgb(212,186,150)    II — We brought the storm inside…
+Ash            #BDA997   rgb(189,169,151)    III — Blood Meridian
+
+ACCENTEN
+Hot Gold       #EE9222   rgb(238,146,34)     max 3%
+Cobalt         #2161B1   rgb(33,97,177)      max 2%
+Dusty Rose     #9F4E52   rgb(159,78,82)      zeldzaam
+Paper          #F2E7D5   rgb(242,231,213)    achtergrond logotype-bestand
+
+TEKSTREGELS (WCAG-contrast)
+zwart op bot 10.6 / op ash 8.7 / op blush 7.5  -> alles toegestaan
+bot op zwart 10.6 · goud op zwart 6.5          -> alles toegestaan
+rood op zwart 4.4 · zwart op rood 4.4          -> alleen >= 24 px
+rood op bot 2.4 · goud op bot 1.6 · rood op blush 1.7 -> nooit tekst
+
+VERDELING: 55% zwart · 30% grondkleur · 10% rood · 5% goud

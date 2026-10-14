@@ -1,0 +1,32 @@
+GINDER — VASTE CROPS
+we brought the storm inside and called it gospel · v01
+
+Dit zijn de goedgekeurde uitsnedes. Gebruik ALTIJD deze bestanden.
+Hersnijd nooit ad hoc in de app: die crops zijn niet dezelfde en breken de reeks.
+
+BESTANDSNAAM
+  GINDER_gospel_crop-<track>-<ratio>_<breedte>x<hoogte>_v01.jpg
+  track = gobekli | storm | blood        ratio = 1x1 | 4x5 | 3x4 | 9x16
+
+WAAR GEBRUIK JE WAT
+  1x1   3000 × 3000   Spotify/Apple cover art, distributeur. Niet bijsnijden, geen tekst op.
+        1080 × 1080   Facebook-feed, Instagram 1:1, playlistcover (schaal naar 640 of 300).
+  4x5   1080 × 1350   Instagram- en Facebook-feed. Dit is de standaardpost.
+  3x4   1080 × 1440   Instagram-grid (valt exact in de tegel), poster, Artist-Pick-beeld.
+  9x16  1080 × 1920   Stories, Reels, Spotify Canvas. Kern in de centrale 1080 × 1350:
+                      boven 220 px en onder 320 px worden afgedekt door de interface.
+
+hires/  dezelfde crops op 2160 px breed — voor print, retina en video-export.
+        Downscalen mag altijd, opschalen nooit.
+
+HOE ZE GEMAAKT ZIJN
+  Niets is uitgerekt, gespiegeld of geblurd. Waar een verticaler kader meer doek vroeg,
+  is de grond van het beeld zelf doorgezet (zelfde korrel, verzachte naad):
+    gobekli   blush bijgezet bóven de hoorns — de lege lucht is het altaar voor tekst
+    storm     rotspuin doorgezet onder de figuur; boven niet, daar raken de bliksems de rand
+              9:16 is een strakke uitsnede op de figuur, het logotype valt bewust weg
+    blood     as bijgezet boven het hoofd; 1:1 en 4:5 zijn van bovenaf gesneden
+              (voeten mogen weg, de tong niet)
+
+JPEG q92, 4:4:4, sRGB. De regels achter deze uitsnedes staan in hoofdstuk VI van de stijlgids.
+Overzicht van alle twaalf: GINDER_crops_overzicht.jpg
