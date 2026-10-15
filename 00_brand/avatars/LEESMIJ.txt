@@ -1,0 +1,70 @@
+GINDER — PROFIELAFBEELDINGEN
+00_brand/avatars/ · v01 · 15.10.2026
+
+Drie bestanden, één per platform. Zelfde zegel, zelfde uitsnede — alleen de maat
+en de compressie verschillen. Gebruik overal hetzelfde beeld: de avatar is het
+enige merkteken dat op alle drie de platformen naast elkaar te zien is.
+
+
+═══════════════════════════════════════════════════════════════════════
+WELK BESTAND WAAR
+═══════════════════════════════════════════════════════════════════════
+
+  GINDER_evergreen_avatar-zegel-spotify_1500x1500_v01.jpg
+      Spotify for Artists → Profiel → Profielfoto bewerken.
+      Minimum is 750 × 750, maximum 20 MB. 1500 is de marge voor schermen met
+      hoge pixeldichtheid. Rond getoond: groot op de artiestenpagina, 64 px in
+      zoeklijsten, 40 px bij "now playing".
+
+  GINDER_evergreen_avatar-zegel-instagram_1080x1080_v01.jpg
+      Instagram → Profiel bewerken → Foto wijzigen.
+      Instagram bewaart intern 320 × 320 en toont ongeveer 110 px in de app,
+      150 px op het web, 56 px in de story-ring. Groter aanleveren geeft een
+      betere verkleining dan 320 px uploaden.
+
+  GINDER_evergreen_avatar-zegel-facebook_1080x1080_v01.jpg
+      Facebook-pagina → Profielfoto bewerken.
+      Facebook toont 176 px op desktop, 128 tot 196 px op mobiel, 40 px bij
+      reacties. Ook hier: groter uploaden, Facebook schaalt zelf.
+
+  GINDER_evergreen_avatar-zegel_1500x1500_v01.png
+      Platte PNG zonder compressieverlies. Voor alles buiten deze drie:
+      Bandcamp, YouTube, een perssheet, een merchleverancier.
+
+  GINDER_avatars_voorbeeld.png
+      Controleblad: hoe de avatar er op elk platform en op elke maat uitziet.
+      Niet uploaden — dit is om naar te kijken.
+
+
+═══════════════════════════════════════════════════════════════════════
+WAT ER AAN HET MASTER-ZEGEL IS AANGEPAST
+═══════════════════════════════════════════════════════════════════════
+
+1. Plat gezet op de eigen grondkleur (#0B0A09). Het master-zegel is een
+   transparante PNG; Facebook en Instagram vullen transparantie zelf in,
+   meestal met wit, en dat geeft een witte rand rond de schijf.
+
+2. De schijf staat op 94 % van het vierkant. Alle drie de platformen tonen de
+   avatar in een cirkel die exact even groot is als het beeld, en in het master
+   raakt de gouden ring bijna de rand — die werd daardoor net weggesneden. Nu
+   blijft de ring overal heel, met ruimte over.
+
+3. Eén keer netjes verkleind met Lanczos in plaats van het aan de encoder van
+   het platform over te laten, JPEG kwaliteit 95 zonder chroma-subsampling
+   (4:4:4), met een ingesloten sRGB-profiel. Zo blijven de haarlijn en de rode
+   ruit scherp in plaats van uit te lopen.
+
+
+═══════════════════════════════════════════════════════════════════════
+REGELS
+═══════════════════════════════════════════════════════════════════════
+
+  · Nooit tekst, datum of "new single" in de avatar. Ook niet tijdelijk.
+  · Nooit het logotype als avatar — op 110 px is dat een gouden veeg. Daar is
+    het zegel voor gemaakt.
+  · Op alle drie de platformen hetzelfde beeld. Wissel je er één, wissel dan
+    alle drie.
+  · De avatar is evergreen: hij verandert niet per release. Wat per release
+    wisselt zijn de header, de omslag en de posts.
+
+Opnieuw aanmaken na een wijziging aan het zegel: python3 src/avatars.py

@@ -1,5 +1,5 @@
 GINDER — WE BROUGHT THE STORM INSIDE AND CALLED IT GOSPEL
-Merklevering v02 · 15.10.2026
+Merklevering v03 · 15.10.2026
 
 
 BEGIN HIER
@@ -17,7 +17,9 @@ WAT ZIT ERIN
     GINDER_logotype_goud.png      1-kleur goud  — voor donkere grond
     GINDER_logotype_bot.png       1-kleur bot   — voor donkere grond
     GINDER_logotype_zwart.png     1-kleur zwart — voor lichte grond
-    GINDER_zegel_1500.png         het beeldmerk, avatar voor alle platformen
+    GINDER_zegel_1500.png         het beeldmerk, master met transparantie
+    avatars/                      kant-en-klare profielfoto's voor Spotify,
+                                  Instagram en Facebook + een controleblad
     GINDER_palet.txt              alle hexwaarden, contrastregels, verdeling
     GINDER_songteksten.txt        de drie teksten, één bron, tikfout gecorrigeerd
 
