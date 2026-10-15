@@ -1,9 +1,12 @@
-GINDER — SINGLE-ARTWORK VAN DE TITELTRACK, KLAAR VOOR DE PLATFORMEN
-00_brand/storm_kit/ · v01 · 15.10.2026
+GINDER — SINGLE-ARTWORK VAN DE TITELTRACK, ALLE FORMATEN
+00_brand/storm_kit/ · v02 · 15.10.2026
 
-Negen bestanden uit één doek: stormLady_MASTER.png, 1254 × 1254. Dit is het
-artwork van de eerste single, niet de EP-cover. De EP-cover is het andere beeld,
-met de roofvogelkop en de bandnaam erin.
+Eenentwintig bestanden uit één doek: stormLady_MASTER.png, 1254 × 1254.
+Dit is het artwork van de eerste single, niet de EP-cover. De EP-cover is het
+andere beeld, met de roofvogelkop en de bandnaam erin.
+
+Gesorteerd per platform. Sommige vlakken staan in twee mappen — dat zijn
+dezelfde pixels, de naam zegt alleen waar hij heen gaat.
 
 
 ═══════════════════════════════════════════════════════════════════════
@@ -11,37 +14,73 @@ EERST DIT — DE COVER IS TE KLEIN
 ═══════════════════════════════════════════════════════════════════════
 
 Het doek is 1254 × 1254. Spotify vraagt 3000 × 3000 en distributeurs weigeren
-alles onder 1400 × 1400. De cover in deze map staat dus op zijn ware grootte,
-1254, en dat is te weinig om de single in te sturen.
+alles onder 1400 × 1400. De cover in deze map staat dus op zijn ware grootte en
+dat is te weinig om de single in te sturen.
 
 Opschalen is geen oplossing: keuringssystemen zien het en het oog ook. Wat wel
 werkt is het doek opnieuw renderen of scannen op minstens 3000 × 3000. Komt die
-master binnen, dan vervang je uploads/stormLady_MASTER.png en draai je
+master binnen, vervang dan uploads/stormLady_MASTER.png en draai
 
     python3 src/stormkit.py
     python3 src/crops.py
 
-Alles komt dan in de juiste maat terug, met dezelfde namen. Alle andere vlakken
-in deze map zijn wél volwaardig: die vragen nergens meer dan 1254 px.
+Alles komt in de juiste maat terug, met dezelfde namen. Alle andere vlakken in
+deze map zijn wél volwaardig: die vragen nergens meer dan 1254 px.
 
 
 ═══════════════════════════════════════════════════════════════════════
-WELK BESTAND WAAR
+1_VIERKANT — het doek zelf, alleen verkleind
 ═══════════════════════════════════════════════════════════════════════
 
-  cover_1254x1254            distributeur, Spotify, Bandcamp — zie waarschuwing
-  spotify-header_2660x1140   Spotify for Artists → Profiel → Header. Het paneel
-                             staat in de centrale derde; Spotify zet je naam
-                             zelf linksonder over het beeld
-  spotify-playlist_640x640   cover van een eigen playlist, max 4 MB
-  ig-post_1080x1350          feedpost 4:5, de standaard op Instagram
-  ig-grid_1080x1440          als je de gridtegel helemaal wil vullen (3:4)
-  story-canvas_1080x1920     story, reel-eindframe én Spotify Canvas. Het doek
-                             staat hoog, de onderste 540 px blijven vrij voor
-                             de knoppen en de trackinfo van Spotify
-  post-vierkant_1080x1080    Facebook-post, Instagram vierkant, forums
-  fb-omslag_851x315          omslagfoto van de pagina, onder 100 KB gehouden
-  fb-ogimage_1200x630        linkvoorbeeld bij het delen van een link
+  cover_1254x1254.jpg      distributeur, Spotify, Bandcamp — zie waarschuwing
+  cover_1254x1254.png      hetzelfde, lossless; sommige distributeurs vragen PNG
+  vierkant_1080x1080       post op Facebook of Instagram, forums, pers
+  vierkant-klein_640x640   kleine weergaves, e-mail, nieuwsbrief
+  thumbnail_320x320        lijstjes en kleine kaarten
+
+═══════════════════════════════════════════════════════════════════════
+2_SPOTIFY
+═══════════════════════════════════════════════════════════════════════
+
+  header_2660x1140         Spotify for Artists → Profiel → Header. Het paneel
+                           staat in de centrale derde: mobiel snijdt de zijkanten
+                           weg, en Spotify zet je naam zelf linksonder
+  canvas_1080x1920         Canvas. Mag een stilstaand beeld zijn (JPG), maar een
+                           loop van 4 tot 6 seconden werkt beter. Geen audio,
+                           geen tekst, geen logo's
+  galerij_2048x1152        de fotogalerij op je artiestenpagina
+  playlist_640x640         cover van een eigen playlist, max 4 MB
+  playlist-klein_300x300   dezelfde cover voor de kleine weergave
+
+  Niet als avatar gebruiken: daar hoort het zegel (00_brand/avatars/). Een
+  volledig artwork wordt pap in een cirkel van 110 px.
+
+═══════════════════════════════════════════════════════════════════════
+3_INSTAGRAM
+═══════════════════════════════════════════════════════════════════════
+
+  post-4x5_1080x1350       de standaard in de feed
+  gridtegel-3x4_1080x1440  als je de tegel in je profielraster helemaal wil vullen
+  post-vierkant_1080x1080  vierkante post
+  story-reel_1080x1920     story, reel-eindframe. Het doek staat hoog: de onderste
+                           540 px blijven vrij voor knoppen, stickers en de
+                           profielbalk
+
+═══════════════════════════════════════════════════════════════════════
+4_FACEBOOK
+═══════════════════════════════════════════════════════════════════════
+
+  omslag_851x315           omslagfoto van de pagina, onder 100 KB gehouden —
+                           anders hercomprimeert Facebook zelf en wordt de rand
+                           van het doek vuil. Links onderaan staat je profielfoto
+                           overheen, dus hou die hoek leeg
+  eventomslag_1920x1005    omslag van een evenement (concert, release show)
+  groepsomslag_1640x856    omslag van een groep
+  ogimage_1200x630         linkvoorbeeld: wat mensen zien als iemand een link
+                           naar jullie deelt
+  post-vierkant_1080x1080  vierkante post
+  post-4x5_1080x1350       staande post, valt meer op in de feed
+  story_1080x1920          story of reel
 
 
 ═══════════════════════════════════════════════════════════════════════
@@ -54,12 +93,14 @@ de zijkanten. Verlengen kan dus niet, en elke strakke uitsnede naar 4:5, 3:4 of
 9:16 snijdt door een hoorn.
 
 Daarom staat het hele doek als paneel op een grondvlak dat uit het beeld zelf
-komt: dezelfde papierkorrel, gemiddelde grondkleur 221 · 193 · 156. De
-geschilderde rand van het paneel blijft zichtbaar, zodat het leest als een
-schilderij aan een muur en niet als een afgesneden beeld.
+komt: dezelfde papierkorrel, gemiddelde grondkleur 221 · 193 · 156. De korrel
+komt uit een vlak van 240 px dat voor 99,99 % zuiver is en geen vouwlijn bevat —
+een vouw zou zich over de brede vlakken als een streep herhalen.
 
-De lege band ernaast of eronder is het altaar. Daar komt tekst — één regel, een
-datum, niets meer. Nooit tekst over het doek zelf.
+De geschilderde rand van het paneel blijft zichtbaar, zodat het leest als een
+schilderij aan een muur en niet als een afgesneden beeld. De lege band ernaast
+of eronder is het altaar. Daar komt tekst — één regel, een datum, niets meer.
+Nooit tekst over het doek zelf.
 
 Techniek: JPEG kwaliteit 90-95, 4:4:4 zonder chroma-subsampling, sRGB
 ingesloten, Lanczos-verkleining. Nergens opgeschaald.
@@ -74,8 +115,8 @@ REGELS
   · Niet bijsnijden, niet spiegelen, niet uitrekken, geen filter. Heb je een
     ander formaat nodig, vraag een nieuw vlak aan in plaats van zelf te snijden.
   · De sleutelregel bij dit artwork is "We all want to be saved". Eén regel per
-    beeld, exact geciteerd, zonder aanhalingstekens.
-  · Als avatar: niet dit beeld maar het zegel (00_brand/avatars/). Een volledig
-    artwork wordt pap in een cirkel van 110 px.
+    beeld, exact geciteerd, zonder aanhalingstekens, en in de lege band —
+    nooit over het doek.
+  · Als avatar: het zegel, niet dit beeld.
 
 Opnieuw aanmaken of een vlak toevoegen: python3 src/stormkit.py

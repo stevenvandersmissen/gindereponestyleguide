@@ -1,5 +1,5 @@
 GINDER — WE BROUGHT THE STORM INSIDE AND CALLED IT GOSPEL
-Merklevering v05 · 15.10.2026
+Merklevering v06 · 15.10.2026
 
 
 BEGIN HIER
@@ -22,8 +22,8 @@ WAT ZIT ERIN
                                   Instagram en Facebook + een controleblad
     logotype_kit/                 zes platformvlakken in vier gronden, plus de
                                   vier logotypeversies transparant op maat
-    storm_kit/                    negen platformvlakken uit het single-artwork
-                                  van de titeltrack, paneelmethode
+    storm_kit/                    alle platformformaten uit het single-artwork
+                                  van de titeltrack: 21 bestanden in vier mappen
     GINDER_palet.txt              alle hexwaarden, contrastregels, verdeling
     GINDER_songteksten.txt        de drie teksten, één bron, tikfout gecorrigeerd
 
