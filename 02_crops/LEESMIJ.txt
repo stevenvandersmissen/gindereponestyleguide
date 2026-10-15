@@ -1,32 +1,89 @@
-GINDER — VASTE CROPS
-we brought the storm inside and called it gospel · v01
+GINDER — WE BROUGHT THE STORM INSIDE AND CALLED IT GOSPEL
+Vaste uitsnedes · 02_crops/ · v02
 
-Dit zijn de goedgekeurde uitsnedes. Gebruik ALTIJD deze bestanden.
-Hersnijd nooit ad hoc in de app: die crops zijn niet dezelfde en breken de reeks.
+Twintig bestanden in deze map, negen in hires/. Ze zijn één keer vastgelegd en
+worden niet per platform opnieuw gesneden. Wie een nieuw formaat nodig heeft,
+vraagt een nieuwe crop aan — hij maakt er geen.
 
-BESTANDSNAAM
-  GINDER_gospel_crop-<track>-<ratio>_<breedte>x<hoogte>_v01.jpg
-  track = gobekli | storm | blood        ratio = 1x1 | 4x5 | 3x4 | 9x16
 
-WAAR GEBRUIK JE WAT
-  1x1   3000 × 3000   Spotify/Apple cover art, distributeur. Niet bijsnijden, geen tekst op.
-        1080 × 1080   Facebook-feed, Instagram 1:1, playlistcover (schaal naar 640 of 300).
-  4x5   1080 × 1350   Instagram- en Facebook-feed. Dit is de standaardpost.
-  3x4   1080 × 1440   Instagram-grid (valt exact in de tegel), poster, Artist-Pick-beeld.
-  9x16  1080 × 1920   Stories, Reels, Spotify Canvas. Kern in de centrale 1080 × 1350:
-                      boven 220 px en onder 320 px worden afgedekt door de interface.
+═══════════════════════════════════════════════════════════════════════
+NAAMGEVING
+═══════════════════════════════════════════════════════════════════════
 
-hires/  dezelfde crops op 2160 px breed — voor print, retina en video-export.
-        Downscalen mag altijd, opschalen nooit.
+  GINDER_gospel_crop-<artwork>-<ratio>_<breedte>x<hoogte>_v01.jpg
 
-HOE ZE GEMAAKT ZIJN
-  Niets is uitgerekt, gespiegeld of geblurd. Waar een verticaler kader meer doek vroeg,
-  is de grond van het beeld zelf doorgezet (zelfde korrel, verzachte naad):
-    gobekli   blush bijgezet bóven de hoorns — de lege lucht is het altaar voor tekst
-    storm     rotspuin doorgezet onder de figuur; boven niet, daar raken de bliksems de rand
-              9:16 is een strakke uitsnede op de figuur, het logotype valt bewust weg
-    blood     as bijgezet boven het hoofd; 1:1 en 4:5 zijn van bovenaf gesneden
-              (voeten mogen weg, de tong niet)
+  <artwork>   storm · gobekli · blood · epcover
+  <ratio>     1x1 · 4x5 · 3x4 · 9x16
 
-JPEG q92, 4:4:4, sRGB. De regels achter deze uitsnedes staan in hoofdstuk VI van de stijlgids.
-Overzicht van alle twaalf: GINDER_crops_overzicht.jpg
+  storm     = single-artwork van de titeltrack (gehoornd masker, gouden ogen)
+  epcover   = de EP-cover (roofvogelkop, bliksems, bandnaam in het beeld)
+
+Dat zijn twee verschillende beelden. Verwissel ze nooit: de single-crops gaan
+naar de eerste release, de epcover-crops naar de EP en naar alles wat de hele
+plaat aankondigt.
+
+
+═══════════════════════════════════════════════════════════════════════
+WAT WAAR NAARTOE GAAT
+═══════════════════════════════════════════════════════════════════════
+
+  1x1 3000      Spotify- en distributeurcover, Bandcamp, pers
+  1x1 1080      Facebook-post, avatarbron, playlistcover
+  4x5 1080      Instagram-feed — de standaard
+  3x4 1080      Instagram-feed als je de hele grid-tegel wil vullen
+  9x16 1080     Story, Reel, Spotify Canvas
+  hires/ 2160   video, print, alles wat later nog geschaald wordt
+
+Techniek: JPEG q92, 4:4:4 chroma, sRGB. Geen filter, geen scherpte-pass,
+geen upscaling achteraf.
+
+
+═══════════════════════════════════════════════════════════════════════
+TWEE METHODES — HET ARTWORK BEPAALT WELKE
+═══════════════════════════════════════════════════════════════════════
+
+A — doek laten groeien  (gobekli, blood, epcover)
+    De figuur blijft op zijn plek en op zijn ware verhouding. De grond groeit
+    mee met de korrel van het schilderij zelf, gekopieerd uit een geverifieerd
+    zuiver stuk doek. Nooit uitrekken, nooit spiegelen, nooit het figuur
+    bijsnijden. Niet verlengen aan de kant waar het figuur de rand raakt:
+    daarom is blood 9:16 enkel bovenaan verlengd en groeit bij epcover het
+    rotspuin onderaan mee.
+
+B — paneel op grondkleur  (storm)
+    Bij de single raken de bliksems de bovenrand, het gewaad de onderrand en
+    de hoorns bijna de zijkanten. Er is geen vrije rand om te laten groeien en
+    elke strakke uitsnede snijdt door een hoorn. Het hele doek staat daarom
+    als paneel op een vlak van de eigen grondkleur, met dezelfde korrel. De
+    geschilderde rand van het paneel blijft zichtbaar — het leest als een
+    schilderij aan een muur, niet als een afgesneden beeld. De band eronder is
+    het altaar: daar komt tekst, nergens anders. Nooit een effen kleurvlak
+    eronder plakken.
+
+
+═══════════════════════════════════════════════════════════════════════
+LET OP — DE SINGLE STAAT TE KLEIN
+═══════════════════════════════════════════════════════════════════════
+
+Het single-artwork van de titeltrack is aangeleverd op 1254 × 1254. Spotify
+vraagt 3000 × 3000 en distributeurs weigeren onder 1400 × 1400. Dit is de
+eerste release, dus dit is het dringendste punt van de hele map.
+
+Zolang er geen hi-res master is:
+  · staat de 1:1 van storm op 1254 px in plaats van 3000 px;
+  · zijn er geen 2160-varianten van storm in hires/;
+  · zijn alle storm-crops voorlopig.
+
+Zodra de master op minstens 3000 × 3000 binnen is: vervangen in uploads/ en
+  python3 src/crops.py
+opnieuw draaien. Alles komt dan in de juiste maat terug, met dezelfde namen.
+Niet opschalen om het gat te vullen — dat ziet een keuringssysteem én het oog.
+
+
+═══════════════════════════════════════════════════════════════════════
+OVERZICHT
+═══════════════════════════════════════════════════════════════════════
+
+GINDER_crops_overzicht.jpg toont alle twintig uitsnedes in releasevolgorde:
+titeltrack, Göbekli Tepe, Blood Meridian, EP-cover. Gebruik dat blad om te
+controleren of iemand het juiste beeld heeft gepakt.

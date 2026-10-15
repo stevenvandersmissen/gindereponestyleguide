@@ -1,5 +1,5 @@
 GINDER — WE BROUGHT THE STORM INSIDE AND CALLED IT GOSPEL
-Merklevering v01 · 14.10.2026
+Merklevering v02 · 15.10.2026
 
 
 BEGIN HIER
@@ -22,11 +22,16 @@ WAT ZIT ERIN
     GINDER_songteksten.txt        de drie teksten, één bron, tikfout gecorrigeerd
 
   02_crops/
-    12 goedgekeurde uitsnedes: 3 tracks × 1:1, 4:5, 3:4, 9:16, op 1080 px
-    de drie 1:1-covers ook op 3000 px (dat is het bestand voor de distributeur)
-    hires/   dezelfde 9 verticale crops op 2160 px, voor print en video
-    GINDER_crops_overzicht.jpg    alles in één blad
-    LEESMIJ.txt                   welk bestand waar hoort
+    20 goedgekeurde uitsnedes: 4 artworks × 1:1, 4:5, 3:4, 9:16, op 1080 px
+    artwork = storm (single titeltrack) · gobekli · blood · epcover (de EP-cover)
+    de 1:1 ook op 3000 px (dat is het bestand voor de distributeur)
+    hires/   9 verticale crops op 2160 px, voor print en video
+    GINDER_crops_overzicht.jpg    alles in één blad, in releasevolgorde
+    LEESMIJ.txt                   welk bestand waar hoort, en hoe ze gemaakt zijn
+
+  Let op — de EP-cover en het single-artwork van de titeltrack zijn twee
+  verschillende beelden. epcover = de roofvogelkop met de bandnaam erin.
+  storm = het gehoornde masker met de gouden ogen, de hoes van de eerste single.
 
 
 WAT ER NIET IN ZIT, MAAR WEL IN DE MAPSTRUCTUUR HOORT
@@ -37,8 +42,11 @@ WAT ER NIET IN ZIT, MAAR WEL IN DE MAPSTRUCTUUR HOORT
                 hoofdstuk IV. Gratis, bewaar een kopie in 00_brand/.
 
 
-DE VIJF DINGEN DIE NOG MOETEN GEBEUREN (hoofdstuk XII)
+DE ZES DINGEN DIE NOG MOETEN GEBEUREN (hoofdstuk XII)
 
+  0. Het single-artwork van de titeltrack hermasteren op 3000 × 3000. Het staat nu
+     op 1254 px — onder de distributeurgrens van 1400 px — en het is wél het beeld
+     van de eerste release. Zodra het er is: python3 src/crops.py opnieuw draaien.
   1. Drie Canvassen maken — 4 tot 6 seconden, stil, naadloze loop, vertrekkend van
      de 9:16-crops die klaarliggen.
   2. Logotype vectoriseren of opnieuw renderen op minstens 6000 px breed. De
