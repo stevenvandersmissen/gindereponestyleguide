@@ -1,0 +1,77 @@
+GINDER — LOGOTYPE-KIT VOOR SPOTIFY, INSTAGRAM EN FACEBOOK
+00_brand/logotype_kit/ · v01 · 15.10.2026
+
+Gemaakt uit de vier logotypes in 00_brand/: kleur, goud, bot en zwart.
+Nergens opgeschaald — elk vlak gebruikt het logotype kleiner dan de master
+(1673 × 434). Dat is ook meteen de grens van wat dit logotype aankan: boven de
+1673 px breed moet het eerst opnieuw gerenderd of gevectoriseerd worden.
+
+
+═══════════════════════════════════════════════════════════════════════
+MAP 1 — platform/   kant-en-klaar, uploaden en klaar
+═══════════════════════════════════════════════════════════════════════
+
+Zes vlakken, elk in vier gronden (bone, blush, ash, zwart):
+
+  spotify-header      2660 × 1140   Spotify for Artists → Profiel → Header.
+                                    Het logotype staat in de centrale derde en
+                                    iets boven het midden: Spotify zet je naam
+                                    zelf linksonder over het beeld.
+  spotify-playlist     640 ×  640   Cover van een eigen playlist. Max 4 MB.
+  ig-post             1080 × 1350   Feedpost 4:5, de standaard op Instagram.
+  ig-story            1080 × 1920   Story of reel-eindframe. Het logotype staat
+                                    in de veilige band van 1080 × 1330; knoppen
+                                    en profielbalk blijven er vanaf.
+  fb-omslag            851 ×  315   Omslagfoto van de pagina. Onder 100 KB
+                                    gehouden, anders hercomprimeert Facebook
+                                    zelf en wordt de rand van het logotype vuil.
+  fb-ogimage          1200 ×  630   Linkvoorbeeld: wat je ziet als iemand een
+                                    link naar jullie deelt.
+
+Welke grond wanneer:
+
+  bone     standaard, en de grond van de titeltrack (eerste single)
+  blush    Göbekli Tepe (tweede single)
+  ash      Blood Meridian (derde single)
+  zwart    als je iets zwaarder wil, of naast donkere beelden staat
+
+Laat de grond meelopen met de release die draait — dan voelt de hele reeks als
+één plaat in plaats van losse posts. De grond is geen effen vlak maar de korrel
+van het doek uit het artwork zelf, verschoven naar de juiste kleur.
+
+Welke logotypeversie staat erop: kleur op bone, zwart op blush en op ash, goud
+op zwart. Dat is geen smaak maar contrast — zie GINDER_palet.txt. Goud op bone
+haalt 1.6:1 en is onleesbaar; zwart op bone haalt 10.6:1.
+
+
+═══════════════════════════════════════════════════════════════════════
+MAP 2 — transparant/   om zelf mee te ontwerpen
+═══════════════════════════════════════════════════════════════════════
+
+De vier versies met alfakanaal, elk op drie breedtes:
+
+  …-spotify_820x213      past in de centrale derde van een 2660-header
+  …-instagram_1080x280   volle breedte van een feedpost of story
+  …-facebook_560x145     past in de veilige band van een 851-omslag
+
+  kleur   het origineel met verfkorrel. Standaard op bone en op naturel.
+  zwart   één kleur. Voor lichte gronden, zeefdruk, stempels, documenten.
+  goud    voor donkere gronden.
+  bot     voor donkere gronden waar goud te warm of te druk oogt.
+
+
+═══════════════════════════════════════════════════════════════════════
+REGELS
+═══════════════════════════════════════════════════════════════════════
+
+  · Nooit het logotype als profielfoto. Op 110 px is het een gouden veeg —
+    daar is het zegel voor (00_brand/avatars/).
+  · Nooit uitrekken, kantelen, omlijnen, van een schaduw voorzien of de kleuren
+    omkeren. Wil je een andere kleur: gebruik de versie die daarvoor bestaat.
+  · Nooit het zegel en het logotype in hetzelfde beeld — kies er één.
+  · Niet onder ongeveer 300 px breed gebruiken; daaronder lopen de letters
+    dicht. Het zegel neemt het over.
+  · Zet er geen tekst overheen. De ruimte eronder is het altaar: daar komt
+    tekst, nergens anders.
+
+Opnieuw aanmaken of een vlak toevoegen: python3 src/logokit.py
