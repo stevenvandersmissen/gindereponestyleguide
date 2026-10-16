@@ -1,5 +1,5 @@
 GINDER — WE BROUGHT THE STORM INSIDE AND CALLED IT GOSPEL
-Merklevering v06 · 15.10.2026
+Merklevering v07 · 15.10.2026
 
 
 BEGIN HIER
@@ -24,6 +24,8 @@ WAT ZIT ERIN
                                   vier logotypeversies transparant op maat
     storm_kit/                    alle platformformaten uit het single-artwork
                                   van de titeltrack: 21 bestanden in vier mappen
+    epcover_kit/                  alle platformformaten uit de EP-cover:
+                                  21 bestanden in vier mappen, cover op 3000²
     GINDER_palet.txt              alle hexwaarden, contrastregels, verdeling
     GINDER_songteksten.txt        de drie teksten, één bron, tikfout gecorrigeerd
 

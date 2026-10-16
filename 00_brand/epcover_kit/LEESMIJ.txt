@@ -1,0 +1,148 @@
+GINDER — EP-COVER, ALLE FORMATEN
+00_brand/epcover_kit/ · v01 · 16.10.2026
+
+Eenentwintig bestanden uit één doek: original_gospel.png, 4096 × 4096.
+Dit is de cover van de EP "We brought the storm inside and called it gospel" —
+het beeld met de roofvogelkop, de rode cirkel en de bandnaam erin. Het andere
+beeld, de gehoornde figuur met de gouden ogen, is het artwork van de eerste
+single en staat in 00_brand/storm_kit/.
+
+Gesorteerd per platform. Sommige vlakken staan in twee mappen — dat zijn
+dezelfde pixels, de naam zegt alleen waar hij heen gaat.
+
+
+═══════════════════════════════════════════════════════════════════════
+DEZE KIT IS WEL OP VOLLE RESOLUTIE
+═══════════════════════════════════════════════════════════════════════
+
+Het doek is 4096 × 4096. De cover staat dus op 3000 × 3000, precies wat Spotify
+vraagt, ruim boven de 1400 × 1400 die distributeurs als ondergrens hanteren, en
+met 2,0 MB (JPG) of 7,7 MB (PNG) onder de limiet van 10 MB.
+
+Er is nergens opgeschaald: elk vlak in deze map is een verkleining van het
+origineel. Dat geldt niet voor de storm_kit — dat doek is maar 1254 px en
+wacht nog op een hermastering.
+
+
+═══════════════════════════════════════════════════════════════════════
+1_VIERKANT — het doek zelf, alleen verkleind
+═══════════════════════════════════════════════════════════════════════
+
+  cover_3000x3000.jpg      distributeur, Spotify, Bandcamp. Dit is het bestand
+                           dat je instuurt voor de EP
+  cover_3000x3000.png      hetzelfde, lossless; sommige distributeurs vragen PNG
+  vierkant_1080x1080       post op Facebook of Instagram, forums, pers
+  vierkant-klein_640x640   kleine weergaves, e-mail, nieuwsbrief
+  thumbnail_320x320        lijstjes en kleine kaarten
+
+  Test voor de cover: zet hem naast andere covers op 160 px en op 64 px. De
+  rode cirkel en de zwarte kop blijven leesbaar, de bandnaam niet. Dat hoort
+  zo — op die maten leest niemand letters, de vorm moet het doen.
+
+═══════════════════════════════════════════════════════════════════════
+2_SPOTIFY
+═══════════════════════════════════════════════════════════════════════
+
+  header_2660x1140         Spotify for Artists → Profiel → Header. Band over de
+                           kop, zonder het logotype: Spotify zet je naam zelf
+                           groot linksonder en raadt ingebrande tekst af. De kop
+                           staat in de centrale derde, want mobiel snijdt de
+                           zijkanten weg
+  canvas_1080x1920         Canvas. Mag een stilstaand beeld zijn (JPG), maar een
+                           loop van 4 tot 6 seconden werkt beter. Geen audio,
+                           geen tekst, geen logo's — daarom valt het logotype
+                           hier weg
+  galerij_2048x1152        de fotogalerij op je artiestenpagina. Hier mag het
+                           logotype wel mee
+  playlist_640x640         cover van een eigen playlist, max 4 MB
+  playlist-klein_300x300   dezelfde cover voor de kleine weergave
+
+  Niet als avatar gebruiken: daar hoort het zegel (00_brand/avatars/). Een
+  volledig artwork wordt pap in een cirkel van 110 px.
+
+═══════════════════════════════════════════════════════════════════════
+3_INSTAGRAM
+═══════════════════════════════════════════════════════════════════════
+
+  post-4x5_1080x1350       de standaard in de feed. Het puin onderaan is
+                           meegegroeid, het doek zelf is ongemoeid
+  gridtegel-3x4_1080x1440  als je de tegel in je profielraster helemaal wil vullen
+  post-vierkant_1080x1080  vierkante post
+  story-reel_1080x1920     story, reel-eindframe. Strakke uitsnede op het figuur:
+                           kop bovenaan, grond onderaan. De onderste 340 px zijn
+                           puin en voeten — daar mogen knoppen en stickers over
+
+═══════════════════════════════════════════════════════════════════════
+4_FACEBOOK
+═══════════════════════════════════════════════════════════════════════
+
+  omslag_851x315           omslagfoto van de pagina, onder 100 KB gehouden —
+                           anders hercomprimeert Facebook zelf en wordt het goud
+                           vuil. De kop vult de mobiele kern; links onderaan,
+                           waar je profielfoto overheen komt, ligt lege bone
+  eventomslag_1920x1005    omslag van een evenement (concert, release show)
+  groepsomslag_1640x856    omslag van een groep
+  ogimage_1200x630         linkvoorbeeld: wat mensen zien als iemand een link
+                           naar jullie deelt. Met logotype, want hier is het
+                           vaak het enige merkteken op het scherm
+  post-vierkant_1080x1080  vierkante post
+  post-4x5_1080x1350       staande post, valt meer op in de feed
+  story_1080x1920          story of reel
+
+
+═══════════════════════════════════════════════════════════════════════
+DRIE MANIEREN, EN WAAROM
+═══════════════════════════════════════════════════════════════════════
+
+Dit doek laat meer toe dan het single-artwork. Het figuur staat volledig binnen
+het kader, bovenaan ligt bone met bliksems, onderaan rotspuin. Daarom drie
+methodes in plaats van één paneel:
+
+  verkleinen   de vierkante vlakken. Verder niets.
+
+  puin laten   de staande vlakken, 4:5 en 3:4. Het rotspuin onderaan groeit mee
+  groeien      uit een monster van het doek zelf (2800,3450 - 4090,4060); het
+               schilderij blijft onaangeroerd en het figuur blijft op ware
+               grootte. Boven wordt nooit verlengd: de bliksems lopen de
+               bovenrand uit en zouden halverwege het beeld doodvallen.
+
+  band         de liggende vlakken. Een horizontale uitsnede over de volle
+               breedte, rond de kop. Een paneel op een grondvlak — de methode
+               van de storm_kit — werd hier klein en bleek; de band is veel
+               sterker en dit doek verdraagt het, want het figuur raakt de
+               zijkanten niet.
+
+  uitsnede     9:16. Een strakke kolom op het figuur (x 471, breedte 2304), van
+               de hanenkam tot de voeten.
+
+Elke band is tegen drie ankerpunten gecontroleerd en het script weigert te
+bouwen als er één sneuvelt:
+
+  kop en hanenkam   y 560 - 1810   moet altijd volledig in beeld
+  logotype          y 2030 - 2300  helemaal erin of helemaal eruit, nooit half
+  gouden stip       y 2590 - 2870  idem
+
+Daarom staat "Ginder" wel in de galerij, de eventomslag, de groepsomslag en de
+og:image, en niet in de header, de Canvas, de stories en de Facebook-omslag.
+Geen enkel vlak toont een halve letter of een halve stip.
+
+Techniek: JPEG kwaliteit 90-95, 4:4:4 zonder chroma-subsampling, sRGB
+ingesloten, Lanczos-verkleining. Grondkleur van het doek: 214 · 182 · 145.
+
+
+═══════════════════════════════════════════════════════════════════════
+REGELS
+═══════════════════════════════════════════════════════════════════════
+
+  · Dit beeld hoort bij de EP. Gebruik het niet om de eerste single aan te
+    kondigen — daarvoor is het storm-artwork.
+  · Niet bijsnijden, niet spiegelen, niet uitrekken, geen filter. Heb je een
+    ander formaat nodig, vraag een nieuw vlak aan in plaats van zelf te snijden.
+    Een eigen crop snijdt vroeg of laat door de hanenkam of door de letters.
+  · Geen tekst over het doek. Wil je een regel kwijt, gebruik dan een vlak met
+    lege bone rechts of onderaan, en hou het bij één regel.
+  · De bandnaam staat al in het beeld. Zet er geen tweede logotype bij.
+  · Als avatar: het zegel, niet dit beeld.
+
+Opnieuw aanmaken of een vlak toevoegen: python3 src/epkit.py
+Controleblad opnieuw tekenen:        python3 src/kitblad.py 00_brand/epcover_kit
