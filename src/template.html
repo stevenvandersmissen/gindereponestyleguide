@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GINDER — Visuele stijlgids v1.0</title>
+<meta name="description" content="Visuele stijlgids van GINDER voor de EP 'We brought the storm inside and called it gospel'. Kleur, typografie, beeldtaal en kant-en-klare specs voor Spotify, Instagram en Facebook.">
+<style>
+@font-face{font-family:'Pirata';src:url(data:font/woff2;base64,__F_PIRATA__) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'ArchivoBlack';src:url(data:font/woff2;base64,__F_ARCHIVO__) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'InterG';src:url(data:font/woff2;base64,__F_INTER4__) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'InterG';src:url(data:font/woff2;base64,__F_INTER6__) format('woff2');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'MonoG';src:url(data:font/woff2;base64,__F_MONO4__) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'MonoG';src:url(data:font/woff2;base64,__F_MONO7__) format('woff2');font-weight:700;font-style:normal;font-display:swap}
+
+:root{
+__IMGVARS__
+  --void:#0B0A09; --red:#E42E22; --gold:#C08A3B; --hot:#EE9222;
+  --bone:#D4BA96; --blush:#DD8B72; --ash:#BDA997; --cobalt:#2161B1; --rose:#9F4E52;
+  --paper:#F2E7D5;
+  --ink:#0B0A09;
+  --rail:72px;
+  --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--void); color:var(--bone);
+  font-family:'InterG',system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px; line-height:1.62; -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+.im{display:block;background-size:cover;background-position:center;background-repeat:no-repeat;width:100%}
+.logo{display:block;background-size:contain;background-position:center;background-repeat:no-repeat;width:100%}
+
+a{color:inherit}
+
+__IMGCSS__
+/* ---------- texture ---------- */
+.grain::after{
+  content:""; position:absolute; inset:0; pointer-events:none; z-index:3;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='220' height='220' filter='url(%23n)' opacity='0.42'/></svg>");
+  mix-blend-mode:multiply; opacity:.5;
+}
+.grain-light::after{mix-blend-mode:overlay;opacity:.3}
+
+/* ---------- type ---------- */
+.black{font-family:'Pirata',serif;font-weight:400;letter-spacing:.01em;line-height:.92}
+.arch{font-family:'ArchivoBlack',Impact,sans-serif;text-transform:uppercase;letter-spacing:.04em;line-height:1.04}
+.mono{font-family:'MonoG',ui-monospace,SFMono-Regular,Menlo,monospace}
+.lbl{font-family:'MonoG',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+
+h2.sect-title{font-family:'ArchivoBlack',Impact,sans-serif;text-transform:uppercase;letter-spacing:.02em;
+  font-size:clamp(30px,5.2vw,58px);line-height:1;margin:0}
+h3{font-family:'ArchivoBlack',Impact,sans-serif;text-transform:uppercase;letter-spacing:.05em;
+  font-size:15px;margin:0 0 14px;line-height:1.3}
+h4{font-family:'ArchivoBlack',Impact,sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:12px;margin:0 0 8px}
+p{margin:0 0 14px;max-width:72ch}
+strong{font-weight:600;color:var(--paper)}
+section.light strong,section.blush strong,section.ash strong{color:var(--void)}
+/* donkere kaart in een lichte sectie: bold moet weer licht worden */
+section.light [style*="background:var(--void)"] strong,
+section.blush [style*="background:var(--void)"] strong,
+section.ash [style*="background:var(--void)"] strong{color:var(--bone)}
+em{font-style:normal;color:var(--red);font-weight:600}
+ul{margin:0 0 14px;padding-left:0;list-style:none}
+li{position:relative;padding-left:26px;margin-bottom:9px;max-width:72ch}
+li::before{content:"";position:absolute;left:4px;top:.62em;width:9px;height:9px;
+  background:var(--red);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+li.ok::before{background:var(--gold)}
+.small{font-size:14.5px;line-height:1.55}
+.dim{opacity:.72}
+
+/* ---------- layout ---------- */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;position:relative;z-index:4}
+section{position:relative;padding:clamp(56px,8vw,110px) 0;overflow:hidden}
+section.light{background:var(--bone);color:var(--void)}
+section.blush{background:var(--blush);color:var(--void)}
+section.ash{background:var(--ash);color:var(--void)}
+section.dark{background:var(--void);color:var(--bone)}
+.light .dim,.blush .dim,.ash .dim{opacity:.68}
+
+.sect-head{display:flex;gap:22px;align-items:flex-start;margin-bottom:38px;flex-wrap:wrap}
+.numeral{font-family:'ArchivoBlack',Impact,sans-serif;font-size:clamp(30px,4.6vw,54px);line-height:.86;color:var(--red);flex:0 0 auto;letter-spacing:.01em;padding-top:4px}
+.light .numeral,.blush .numeral,.ash .numeral{color:var(--red)}
+.sect-head .meta{margin-top:10px;max-width:60ch}
+
+.grid{display:grid;gap:22px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.g2,.g3,.g4{grid-template-columns:1fr}}
+@media(max-width:640px){th,td{padding:8px 9px;font-size:13px}.tablewrap::after{content:'\2194 sleep de tabel';display:block;font-family:'MonoG',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;opacity:.5;margin:-10px 0 14px}}
+
+.card{border:1px solid rgba(192,138,59,.42);padding:22px;background:rgba(0,0,0,.14);position:relative}
+.light .card,.blush .card,.ash .card{background:rgba(11,10,9,.045);border-color:rgba(11,10,9,.3)}
+.card.black{background:var(--void);color:var(--bone);border-color:rgba(192,138,59,.5);font-family:'InterG',sans-serif}
+.card.red{background:var(--red);color:var(--void);border-color:var(--void)}
+.card .lbl{display:block;margin-bottom:12px;color:var(--red)}
+.card.black .lbl{color:var(--gold)}
+
+.rule{height:1px;background:currentColor;opacity:.25;margin:34px 0}
+.spikes{display:block;width:100%;height:16px}
+
+/* ---------- nav ---------- */
+#rail{position:fixed;left:0;top:0;bottom:0;width:var(--rail);background:var(--void);
+  border-right:1px solid rgba(192,138,59,.3);z-index:50;display:flex;flex-direction:column;
+  align-items:center;padding:14px 0;gap:2px}
+#rail .mark{width:34px;margin-bottom:10px}
+#rail a{display:flex;align-items:center;justify-content:center;width:40px;height:34px;
+  font-family:'MonoG',monospace;font-size:10px;letter-spacing:.06em;color:rgba(212,186,150,.5);
+  text-decoration:none;border:1px solid transparent;transition:.18s}
+#rail a:hover{color:var(--bone);border-color:rgba(192,138,59,.5)}
+#rail a.on{color:var(--void);background:var(--red);border-color:var(--red)}
+body{padding-left:var(--rail)}
+@media(max-width:860px){
+  body{padding-left:0;padding-top:46px}
+  #rail{flex-direction:row;bottom:auto;width:100%;height:46px;overflow-x:auto;gap:0;padding:0 8px;
+    border-right:none;border-bottom:1px solid rgba(192,138,59,.3);justify-content:flex-start}
+  #rail .mark{display:none}
+  #rail a{flex:0 0 auto;height:46px;width:auto;padding:0 11px}
+}
+
+/* ---------- hero ---------- */
+#hero{background:var(--blush);color:var(--void);padding:clamp(40px,7vw,80px) 0 0;min-height:92vh;display:flex;flex-direction:column;justify-content:center}
+.sun{width:34px;height:34px;border-radius:50%;background:var(--gold);margin:0 auto 26px}
+.wordmark{display:block;width:min(86%,900px);margin:0 auto}
+.hero-sub{text-align:center;margin:30px auto 0;max-width:780px}
+.hero-sub .ep{font-family:'ArchivoBlack',Impact,sans-serif;text-transform:uppercase;
+  font-size:clamp(13px,2.1vw,22px);letter-spacing:.06em;line-height:1.25;color:var(--void)}
+.hero-sub .ep span{color:#8E1E14}
+.hero-meta{margin-top:22px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.chip{font-family:'MonoG',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
+  border:1px solid rgba(11,10,9,.45);padding:6px 11px}
+.chip.solid{background:var(--void);color:var(--blush);border-color:var(--void)}
+.hero-art{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1040px;margin:clamp(34px,5vw,60px) auto 0;padding:0 28px}
+.hero-art figure{margin:0}
+.hero-art .im{border:1px solid rgba(11,10,9,.35);aspect-ratio:1;background-position:center 28%}
+.hero-art figcaption{margin-top:9px;font-family:'MonoG',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+.hero-spikes{margin-top:auto;width:100%;height:28px;display:block}
+@media(max-width:700px){.hero-art{grid-template-columns:1fr;max-width:380px}}
+
+/* ---------- colour swatches ---------- */
+.sw{border:1px solid rgba(11,10,9,.3);background:#fff0;cursor:pointer;text-align:left;
+  padding:0;font:inherit;color:inherit;display:block;width:100%;transition:transform .15s}
+.sw:hover{transform:translateY(-3px)}
+.sw .chipbox{height:118px;position:relative}
+.sw .chipbox .copy{position:absolute;right:8px;bottom:7px;font-family:'MonoG',monospace;font-size:9.5px;
+  letter-spacing:.14em;opacity:0;transition:.15s}
+.sw:hover .chipbox .copy{opacity:.9}
+.sw .info{padding:11px 12px 13px;background:rgba(11,10,9,.055)}
+.dark .sw .info{background:rgba(212,186,150,.07)}
+.sw .nm{font-family:'ArchivoBlack',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase}
+.sw .hx{font-family:'MonoG',monospace;font-size:12px;margin-top:3px}
+.sw .use{font-size:12.5px;line-height:1.4;margin-top:7px;opacity:.75}
+
+/* ---------- tables ---------- */
+table{width:100%;border-collapse:collapse;font-size:14px;margin:0 0 18px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid rgba(11,10,9,.18);vertical-align:top}
+.dark th,.dark td{border-color:rgba(192,138,59,.25)}
+th{font-family:'MonoG',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  border-bottom:1px solid currentColor;opacity:.9}
+td.n{font-family:'MonoG',monospace;white-space:nowrap}
+tbody tr:hover{background:rgba(228,46,34,.07)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* ---------- do / dont ---------- */
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .do,.dd .dont{padding:20px;border:1px solid}
+.dd .do{border-color:rgba(192,138,59,.6);background:rgba(192,138,59,.1)}
+.dd .dont{border-color:var(--red);background:rgba(228,46,34,.1)}
+.dd h4{letter-spacing:.14em}
+.dd .do h4{color:#7A5415}
+.dark .dd .do h4{color:var(--gold)}
+.dd .dont h4{color:#9E180E}
+.dark .dd .dont h4{color:var(--red)}
+.dd li::before{clip-path:none;border-radius:50%;width:7px;height:7px;top:.68em}
+.dd .do li::before{background:var(--gold)}
+.dd .dont li::before{background:var(--red);clip-path:polygon(50% 0,100% 100%,0 100%);border-radius:0}
+
+/* ---------- misc components ---------- */
+.kv{display:flex;gap:10px;font-family:'MonoG',monospace;font-size:12.5px;padding:7px 0;
+  border-bottom:1px dotted rgba(11,10,9,.25)}
+.dark .kv{border-color:rgba(192,138,59,.3)}
+.kv b{font-weight:700;min-width:124px;flex:0 0 auto;opacity:.65;font-weight:400}
+.pill{display:inline-block;font-family:'MonoG',monospace;font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;padding:4px 9px;border:1px solid currentColor;margin:0 6px 6px 0}
+.pill.red{background:var(--red);color:var(--void);border-color:var(--red)}
+.pill.gold{background:var(--gold);color:var(--void);border-color:var(--gold)}
+.big-num{font-family:'ArchivoBlack',sans-serif;font-size:34px;line-height:1;letter-spacing:.02em}
+.swdot{display:inline-block;width:13px;height:13px;vertical-align:-2px;margin:0 3px 0 8px;border:1px solid rgba(212,186,150,.45)}
+.quote{font-family:'Pirata',serif;font-size:clamp(26px,4.4vw,46px);line-height:1.05;max-width:20ch}
+</style>
+</head>
+<body>
+
+<nav id="rail">
+  <span class="logo l-gold mark" aria-hidden="true"></span>
+  <a href="#s1" data-t="s1">I</a><a href="#s2" data-t="s2">II</a><a href="#s3" data-t="s3">III</a>
+  <a href="#s4" data-t="s4">IV</a><a href="#s5" data-t="s5">V</a><a href="#s6" data-t="s6">VI</a>
+  <a href="#s7" data-t="s7">VII</a><a href="#s8" data-t="s8">VIII</a><a href="#s9" data-t="s9">IX</a>
+  <a href="#s10" data-t="s10">X</a><a href="#s11" data-t="s11">XI</a><a href="#s12" data-t="s12">XII</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header id="hero" class="grain">
+  <div class="sun"></div>
+  <span class="logo l-colour wordmark" role="img" aria-label="GINDER"></span>
+  <div class="hero-sub">
+    <div class="ep">We brought the storm inside<br><span>and called it gospel</span></div>
+    <div class="hero-meta">
+      <span class="chip solid">Visuele stijlgids</span>
+      <span class="chip">v1.1 — okt 2026</span>
+      <span class="chip">Spotify</span>
+      <span class="chip">Instagram</span>
+      <span class="chip">Facebook</span>
+    </div>
+  </div>
+  <div class="hero-art">
+    <figure><span class="im i-storm" role="img" aria-label="Artwork single We brought the storm inside and called it gospel"></span><figcaption>1 — …called it gospel</figcaption></figure>
+    <figure><span class="im i-gobekli" role="img" aria-label="Artwork Göbekli Tepe"></span><figcaption>2 — Göbekli Tepe</figcaption></figure>
+    <figure><span class="im i-blood" role="img" aria-label="Artwork Blood Meridian"></span><figcaption>3 — Blood Meridian</figcaption></figure>
+  </div>
+  <svg class="hero-spikes" viewBox="0 0 1200 28" preserveAspectRatio="none" aria-hidden="true">
+    <g fill="#E42E22">__SPIKEROW__</g>
+  </svg>
+</header>
+
+<!-- ============ I — DE WERELD ============ -->
+<section id="s1" class="dark grain">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="numeral">I</div>
+      <div>
+        <h2 class="sect-title">De wereld</h2>
+        <p class="meta dim">Waar elke post, cover en story uit moet voelen alsof hij komt. Als een asset dit gevoel niet oproept, is het geen GINDER-asset.</p>
+      </div>
+    </div>
+
+    <div class="grid g2">
+      <div>
+        <p class="quote" style="color:var(--gold)">Heiligen zonder gezicht. Ogen die terugkijken. Goud dat niemand redt.</p>
+        <p style="margin-top:22px">GINDER leent de taal van <strong>devotie</strong> — iconen, relieken, processies, bladgoud — en zet er iets beestachtigs in. De beelden zijn <strong>plat, frontaal en geschilderd</strong>, alsof ze uit een museumzaal komen die je beter niet had betreden. Nooit cinematisch, nooit fotorealistisch, nooit "cool".</p>
+        <p>De humor zit in de details: polkadots op een demonenpoot, een dambordjasje, sokken. <strong>Het absurde maakt het dreigender, niet lichter.</strong></p>
+      </div>
+      <div class="card black">
+        <span class="lbl">Vijf kernwoorden</span>
+        <ul>
+          <li><strong>Ritueel</strong> — alles staat opgesteld, niets is toevallig.</li>
+          <li><strong>Iconisch</strong> — één figuur, centraal, leesbaar op 64 px.</li>
+          <li><strong>Vuil goud</strong> — rijkdom met stof erop, geen glans.</li>
+          <li><strong>Vleesrood</strong> — het enige luide element in het frame.</li>
+          <li><strong>Droge waanzin</strong> — absurde details, bloedserieus gebracht.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <h3 style="color:var(--gold)">De EP en haar cover</h3>
+    <div class="grid g2" style="margin-top:16px;align-items:center">
+      <div>
+        <span class="im i-epcover" role="img" aria-label="EP-cover" style="border:1px solid rgba(192,138,59,.4)"></span>
+      </div>
+      <div>
+        <p style="margin-top:0"><strong>We brought the storm inside and called it gospel</strong> is zowel de EP als de titeltrack. Het artwork met de roofvogelkop, de bliksems en de getypte bandnaam is de <strong>cover van de EP</strong> — niet van de single.</p>
+        <div class="kv"><b>Gebruik</b><span>EP-release, distributeur, hero in ads, Spotify-header, FB-omslag</span></div>
+        <div class="kv"><b>Bijzonder</b><span>het enige artwork met de bandnaam erin — daarom nooit nog eens tekst erbovenop</span></div>
+        <div class="kv"><b>Bestand</b><span class="mono">epcover-*</span></div>
+        <p class="small dim" style="margin:12px 0 0">De titeltrack komt óók als single uit, met een eigen artwork. Verwar die twee niet: de single is de gehoornde kop, de EP is de roofvogel met de bandnaam.</p>
+      </div>
+    </div>
+
+    <h3 style="color:var(--gold);margin-top:34px">De drie singles, in releasevolgorde</h3>
+    <div class="grid g3" style="margin-top:18px">
+      <div class="card">
+        <span class="lbl" style="color:var(--gold)">1ste release — titeltrack</span>
+        <h4 style="font-size:15px">We brought the storm inside…</h4>
+        <span class="im i-storm" aria-hidden="true" style="margin:12px 0;border:1px solid rgba(192,138,59,.4)"></span>
+        <div class="kv"><b>Sfeer</b><span>frontaal, gemaskerd, stilstaande dreiging</span></div>
+        <div class="kv"><b>Grond</b><span style="color:var(--bone)">Bone #D4BA96</span></div>
+        <div class="kv"><b>Vorm</b><span>symmetrie + cirkel</span></div>
+        <div class="kv"><b>Sleutelregel</b><span style="color:var(--red)">We all want to be saved</span></div>
+        <p class="small dim" style="margin-top:12px">Dit opent de campagne: de eerste single én de titeltrack. Eigen artwork, niet de EP-cover. De tekst kijkt naar ons: draden, puls, pixels, het doolhof.</p>
+      </div>
+      <div class="card">
+        <span class="lbl">2de release</span>
+        <h4 style="font-size:15px">Göbekli Tepe</h4>
+        <span class="im i-gobekli" aria-hidden="true" style="margin:12px 0;border:1px solid rgba(192,138,59,.4)"></span>
+        <div class="kv"><b>Sfeer</b><span>priester, altaar, stilstand</span></div>
+        <div class="kv"><b>Grond</b><span style="color:var(--blush)">Blush #DD8B72</span></div>
+        <div class="kv"><b>Vorm</b><span>strikte symmetrie</span></div>
+        <div class="kv"><b>Sleutelregel</b><span style="color:var(--red)">Everything is change</span></div>
+        <p class="small dim" style="margin-top:12px">Het meest sacrale beeld — mysterie, geen uitleg. De tekst graaft: modder, offers, koolstof, graven die openblijven.</p>
+      </div>
+      <div class="card">
+        <span class="lbl">3de release</span>
+        <h4 style="font-size:15px">Blood Meridian</h4>
+        <span class="im i-blood" aria-hidden="true" style="margin:12px 0;border:1px solid rgba(192,138,59,.4)"></span>
+        <div class="kv"><b>Sfeer</b><span>processie, hitte, spot</span></div>
+        <div class="kv"><b>Grond</b><span style="color:var(--ash)">Ash #BDA997</span></div>
+        <div class="kv"><b>Vorm</b><span>zijaanzicht, in beweging</span></div>
+        <div class="kv"><b>Sleutelregel</b><span style="color:var(--red)">Stay forever, in gold</span></div>
+        <p class="small dim" style="margin-top:12px">Het grappigste én het wreedste. Ideaal voor stories, memes en merch-teasers. De tekst is koud en devoot tegelijk: geen romantiek maar bewaren — iemand in goud zetten zodat het blijft. Vandaar het goud.</p>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+    <div class="dd">
+      <div class="do">
+        <h4>Dit is GINDER</h4>
+        <ul>
+          <li class="ok">Platte achtergrondvlakken met doek- of papierkorrel.</li>
+          <li class="ok">Eén figuur, centraal of in strak profiel.</li>
+          <li class="ok">Veel lege ruimte rond het onderwerp — het "altaar".</li>
+          <li class="ok">Handgeschilderde/collage-textuur, zichtbare verf.</li>
+          <li class="ok">Symbolen in plaats van uitleg.</li>
+        </ul>
+      </div>
+      <div class="dont">
+        <h4>Dit is het niet</h4>
+        <ul>
+          <li>Bandfoto's met iedereen tegen een bakstenen muur.</li>
+          <li>Neon, glows, chroom, 3D-renders, lensflares.</li>
+          <li>Instagram-filters, vignettes, "vintage" presets.</li>
+          <li>Drukke collages waarin het figuur verdwijnt.</li>
+          <li>Stockbeeld, emoji-spam, memesjablonen met Impact-tekst.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ II — LOGO ============ -->
+<section id="s2" class="light grain grain-light">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="numeral">II</div>
+      <div>
+        <h2 class="sect-title">Logotype &amp; zegel</h2>
+        <p class="meta dim">Het woordmerk is <strong>getekend, niet getypt</strong>. Het is een geschilderd object met barsten, afgesleten goud en rode onderlaag — behandel het als artwork, niet als tekst.</p>
+      </div>
+    </div>
+
+    <div style="background:#F2E7D5;padding:clamp(26px,6vw,60px);border:1px solid rgba(11,10,9,.25)">
+      <span class="logo l-colour" role="img" aria-label="GINDER logotype" style="max-width:860px;margin:0 auto"></span>
+    </div>
+    <p class="lbl" style="margin:12px 0 0;opacity:.7">Primair logotype — volle kleur op lichte grond (bot, blush, papier)</p>
+
+    <div class="grid g2" style="margin-top:26px">
+      <div>
+        <div style="background:var(--void);padding:clamp(22px,5vw,46px);border:1px solid rgba(11,10,9,.3)">
+          <span class="logo l-colour" role="img" aria-label="GINDER op zwart" style="max-width:420px;margin:0 auto"></span>
+        </div>
+        <p class="caption" style="color:#9E180E">✘ volle kleur op zwart — de zwarte kern valt weg, alleen de rode scherven blijven</p>
+      </div>
+      <div>
+        <div style="background:var(--void);padding:clamp(22px,5vw,46px);border:1px solid rgba(11,10,9,.3)">
+          <span class="logo l-gold" role="img" aria-label="GINDER in goud" style="max-width:420px;margin:0 auto"></span>
+        </div>
+        <p class="caption" style="color:#1d6b2f">✔ op donkere grond altijd de 1-kleurversie (goud of bot)</p>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <h3>De vier toegestane varianten</h3>
+    <div class="grid g4" style="margin-top:16px">
+      <div class="card">
+        <span class="lbl">01 — kleur op licht</span>
+        <div style="background:#F2E7D5;padding:18px;display:flex;align-items:center;min-height:120px">
+          <span class="logo l-colour" aria-hidden="true"></span>
+        </div>
+        <p class="small dim" style="margin-top:10px">Standaard. Covers, posters, merch op naturel, website.</p>
+      </div>
+      <div class="card">
+        <span class="lbl">02 — goud op zwart</span>
+        <div style="background:var(--void);padding:18px;display:flex;align-items:center;min-height:120px">
+          <span class="logo l-gold" aria-hidden="true"></span>
+        </div>
+        <p class="small dim" style="margin-top:10px">Donkere grond, video-eindframes, zwarte merch.</p>
+      </div>
+      <div class="card">
+        <span class="lbl">03 — bot op zwart</span>
+        <div style="background:var(--void);padding:18px;display:flex;align-items:center;min-height:120px">
+          <span class="logo l-bone" aria-hidden="true"></span>
+        </div>
+        <p class="small dim" style="margin-top:10px">Als goud te warm of te druk oogt. Maximale leesbaarheid.</p>
+      </div>
+      <div class="card">
+        <span class="lbl">04 — zwart op grondkleur</span>
+        <div style="background:var(--blush);padding:18px;display:flex;align-items:center;min-height:120px">
+          <span class="logo l-black" aria-hidden="true"></span>
+        </div>
+        <p class="small dim" style="margin-top:10px">Één kleur, voor zeefdruk, stempels, fax-eenvoud.</p>
+      </div>
+    </div>
+    <p class="small dim" style="margin-top:12px">Meer varianten bestaan niet. <strong>De volle-kleurversie wordt nooit hergekleurd</strong> — als je een andere kleur nodig hebt, gebruik je een 1-kleurversie.</p>
+
+    <div class="rule"></div>
+
+    <div class="grid g2">
+      <div>
+        <h3>Het zegel</h3>
+        <div style="display:flex;gap:22px;align-items:center;flex-wrap:wrap">
+          <span class="logo l-zegel" role="img" aria-label="GINDER zegel" style="width:170px;flex:0 0 auto"></span>
+          <div style="display:flex;gap:14px;align-items:flex-end">
+            <div style="text-align:center"><span class="logo l-zegel" aria-hidden="true" style="width:72px"></span><div class="caption" style="margin-top:6px">72 px</div></div>
+            <div style="text-align:center"><span class="logo l-zegel" aria-hidden="true" style="width:40px"></span><div class="caption" style="margin-top:6px">40 px</div></div>
+          </div>
+        </div>
+        <ul class="small" style="margin-top:16px">
+          <li>De <strong>G uit het logotype</strong> in een zwarte cirkel met gouden ring en rode ruit. Overal dezelfde avatar: Spotify, Instagram, Facebook, Bandcamp, YouTube.</li>
+          <li>Lever aan op <strong>1500 × 1500</strong> (PNG). Platformen snijden zelf rond bij.</li>
+          <li>Nooit het volledige logotype als profielfoto: in een cirkel van 110 px blijft er pap over.</li>
+          <li>Het zegel staat nooit náást het logotype in hetzelfde beeld — kies er één.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Vrije ruimte &amp; minimummaten</h3>
+        <div style="position:relative;background:var(--bone);border:1px dashed rgba(11,10,9,.45);padding:9%;margin-bottom:12px">
+          <div style="position:absolute;inset:0;border:1px solid rgba(228,46,34,.35);margin:9%"></div>
+          <span class="logo l-black" aria-hidden="true"></span>
+          <span class="mono" style="position:absolute;left:8px;top:6px;font-size:9px;letter-spacing:.14em;color:#9E180E">X = HOOGTE VAN DE G</span>
+        </div>
+        <div class="kv"><b>Vrije ruimte</b><span>X rondom, waarbij X = hoogte van de G</span></div>
+        <div class="kv"><b>Min. kleur</b><span>400 px breed (de textuur heeft ruimte nodig)</span></div>
+        <div class="kv"><b>Min. 1-kleur</b><span>120 px breed · print 30 mm</span></div>
+        <div class="kv"><b>Kleiner?</b><span>gebruik het zegel</span></div>
+        <div class="kv"><b>Uitlijning</b><span>optisch centreren — de R loopt rechts iets uit</span></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:22px;border-color:var(--red);background:rgba(228,46,34,.07)">
+      <span class="lbl" style="color:#9E180E">Technische staat van het bestand</span>
+      <p class="small" style="margin:0">Het aangeleverde logotype is <strong>raster, 1673 × 434 px</strong> met transparantie. Dat volstaat voor alles op het scherm en voor print tot ongeveer <strong>14 cm breed</strong> (300 dpi). Voor posters, vinylhoezen, backdrops en borduur heb je een <strong>vectorversie of een hogere-resolutie render</strong> nodig — laat die maken vóór de eerste merchbestelling. Schaal het huidige bestand nooit op in Photoshop.</p>
+    </div>
+
+    <div class="rule"></div>
+
+    <h3>Lockups</h3>
+    <div class="grid g3" style="margin-top:16px">
+      <div class="card">
+        <span class="lbl">A — releaseblok</span>
+        <div style="background:#F2E7D5;padding:20px;display:flex;flex-direction:column;gap:12px;justify-content:center;aspect-ratio:1">
+          <span class="logo l-colour" aria-hidden="true"></span>
+          <div style="height:3px;background:var(--red);width:70%;margin:0 auto"></div>
+          <div class="arch" style="font-size:9.5px;text-align:center;color:#0B0A09;line-height:1.4">We brought the storm<br>inside and called it gospel</div>
+        </div>
+        <p class="small dim" style="margin-top:10px">Titel altijd ónder het logotype, gescheiden door een rode lijn.</p>
+      </div>
+      <div class="card">
+        <span class="lbl">B — ceremonieel</span>
+        <div style="background:var(--blush);padding:20px;display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center;aspect-ratio:1">
+          <div style="width:30px;height:30px;border-radius:50%;background:var(--gold)"></div>
+          <span class="logo l-black" aria-hidden="true"></span>
+        </div>
+        <p class="small dim" style="margin-top:10px">De gouden zon boven het woord. Posters, Canvas-eindframe.</p>
+      </div>
+      <div class="card">
+        <span class="lbl">C — live / datum</span>
+        <div style="background:var(--void);padding:20px;display:flex;flex-direction:column;gap:12px;justify-content:center;aspect-ratio:1">
+          <span class="logo l-gold" aria-hidden="true"></span>
+          <div class="arch" style="font-size:11px;text-align:center;color:var(--bone)">14.11.2026</div>
+          <div class="mono" style="font-size:9px;text-align:center;letter-spacing:.2em;color:var(--red)">BRUSSEL</div>
+        </div>
+        <p class="small dim" style="margin-top:10px">Event, flyer, story. Datum in Archivo, plaats in Mono.</p>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <h3>Kleintest</h3>
+    <div style="display:flex;gap:26px;align-items:flex-end;flex-wrap:wrap;background:var(--void);padding:26px;border:1px solid rgba(11,10,9,.3)">
+      <div><span class="logo l-gold" aria-hidden="true" style="width:320px"></span><div class="caption" style="color:var(--bone)">320 px — ✔</div></div>
+      <div><span class="logo l-gold" aria-hidden="true" style="width:200px"></span><div class="caption" style="color:var(--bone)">200 px — ✔</div></div>
+      <div><span class="logo l-gold" aria-hidden="true" style="width:120px"></span><div class="caption" style="color:var(--bone)">120 px — grens</div></div>
+      <div><span class="logo l-gold" aria-hidden="true" style="width:70px"></span><div class="caption" style="color:var(--red)">70 px — ✘ zegel gebruiken</div></div>
+      <div><span class="logo l-zegel" aria-hidden="true" style="width:70px"></span><div class="caption" style="color:var(--bone)">zegel op 70 px — ✔</div></div>
+    </div>
+
+    <div class="dd" style="margin-top:26px">
+      <div class="do">
+        <h4>Wel</h4>
+        <ul>
+          <li class="ok">Het logotype op een <strong>rustig vlak</strong> zetten: grondkleur, zwarte balk, papier.</li>
+          <li class="ok">Volle kleur op licht, 1-kleur op donker.</li>
+          <li class="ok">De transparante PNG gebruiken — nooit het bestand met de crèmekleurige achtergrond over een gekleurd vlak plakken.</li>
+          <li class="ok">Bij twijfel: groter en met meer lucht eromheen.</li>
+        </ul>
+      </div>
+      <div class="dont">
+        <h4>Niet</h4>
+        <ul>
+          <li>Hergekleurd, ingekleurd of met verloop gevuld.</li>
+          <li>Uitgerekt, schuingetrokken, geroteerd of in een boog.</li>
+          <li>Slagschaduw, outline, glow, 3D of "metallic" filter.</li>
+          <li>Over een figuur, gezicht of druk stuk artwork.</li>
+          <li>Opgeschaald vanaf de rasterversie — dat geeft zachte, vuile randen.</li>
+          <li>Nagetypt in Pirata One of een ander gotisch font. Het logotype is uniek, het font is slechts familie.</li>
+          <li>In een badge, sticker of gekleurd kader gestopt.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ III — KLEUR ============ -->
+<section id="s3" class="dark grain">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="numeral">III</div>
+      <div>
+        <h2 class="sect-title">Kleur</h2>
+        <p class="meta dim">Alle waarden zijn rechtstreeks uit de drie artworks gesampled. Klik een staal om de hex te kopiëren.</p>
+      </div>
+    </div>
+
+    <h3 style="color:var(--gold)">Kernpalet</h3>
+    <div class="grid g4" style="margin-top:16px">
+      <button class="sw" data-hex="#0B0A09"><div class="chipbox" style="background:#0B0A09;border:1px solid rgba(192,138,59,.35)"><span class="copy" style="color:#D4BA96">kopieer</span></div><div class="info"><div class="nm">Void Black</div><div class="hx">#0B0A09 · 11,10,9</div><div class="use">De basis. 50–60% van elk frame. Gewaden, koppen, tekstblokken.</div></div></button>
+      <button class="sw" data-hex="#E42E22"><div class="chipbox" style="background:#E42E22"><span class="copy" style="color:#0B0A09">kopieer</span></div><div class="info"><div class="nm">Blood Red</div><div class="hx">#E42E22 · 228,46,34</div><div class="use">Signaal. Max 15%. Spikes, ogen, één woord, één lijn.</div></div></button>
+      <button class="sw" data-hex="#C08A3B"><div class="chipbox" style="background:#C08A3B"><span class="copy" style="color:#0B0A09">kopieer</span></div><div class="info"><div class="nm">Offer Gold</div><div class="hx">#C08A3B · 192,138,59</div><div class="use">Wordmark, haarlijnen, kaders, nummering. 5–10%.</div></div></button>
+      <button class="sw" data-hex="#D4BA96"><div class="chipbox" style="background:#D4BA96"><span class="copy" style="color:#0B0A09">kopieer</span></div><div class="info"><div class="nm">Bone</div><div class="hx">#D4BA96 · 212,186,150</div><div class="use">Papiergrond + bodytekst op zwart. Track II.</div></div></button>
+    </div>
+    <div class="grid g4" style="margin-top:16px">
+      <button class="sw" data-hex="#DD8B72"><div class="chipbox" style="background:#DD8B72"><span class="copy" style="color:#0B0A09">kopieer</span></div><div class="info"><div class="nm">Priest Blush</div><div class="hx">#DD8B72 · 221,139,114</div><div class="use">Grond van Track I. De enige "zachte" kleur — nooit voor tekst.</div></div></button>
+      <button class="sw" data-hex="#BDA997"><div class="chipbox" style="background:#BDA997"><span class="copy" style="color:#0B0A09">kopieer</span></div><div class="info"><div class="nm">Ash</div><div class="hx">#BDA997 · 189,169,151</div><div class="use">Grond van Track III. Vuile, stoffige variant van Bone.</div></div></button>
+      <button class="sw" data-hex="#EE9222"><div class="chipbox" style="background:#EE9222"><span class="copy" style="color:#0B0A09">kopieer</span></div><div class="info"><div class="nm">Hot Gold</div><div class="hx">#EE9222 · 238,146,34</div><div class="use">Accent in kleine vlakken: gloed in ogen, bliksem. Max 3%.</div></div></button>
+      <button class="sw" data-hex="#2161B1"><div class="chipbox" style="background:#2161B1"><span class="copy" style="color:#D4BA96">kopieer</span></div><div class="info"><div class="nm">Cobalt</div><div class="hx">#2161B1 · 33,97,177</div><div class="use">De grap in de hoek. Max 2% — één sok, één steen, één link.</div></div></button>
+    </div>
+
+    <div class="rule"></div>
+
+    <div class="grid g2">
+      <div>
+        <h3 style="color:var(--gold)">Verdeling per frame</h3>
+        <div style="display:flex;height:46px;margin:14px 0 10px;border:1px solid rgba(192,138,59,.4)">
+          <div style="flex:55;background:#0B0A09;border-right:1px solid rgba(192,138,59,.5)"></div><div style="flex:30;background:#D4BA96;border-right:1px solid rgba(192,138,59,.5)"></div>
+          <div style="flex:10;background:#E42E22;border-right:1px solid rgba(192,138,59,.5)"></div><div style="flex:5;background:#C08A3B"></div>
+        </div>
+        <p class="small dim">55% zwart · 30% grondkleur (bone/blush/ash) · 10% rood · 5% goud. Dit is geen suggestie maar de reden waarom de drie covers op één rij thuishoren.</p>
+        <h3 style="color:var(--gold);margin-top:26px">Per track</h3>
+        <div class="kv"><b>I Göbekli Tepe</b><span><i class="swdot" style="background:#DD8B72"></i>blush<i class="swdot" style="background:#0B0A09"></i>void<i class="swdot" style="background:#E42E22"></i>red<i class="swdot" style="background:#C08A3B"></i>gold</span></div>
+        <div class="kv"><b>II Storm / gospel</b><span><i class="swdot" style="background:#D4BA96"></i>bone<i class="swdot" style="background:#E42E22"></i>red<i class="swdot" style="background:#C08A3B"></i>gold<i class="swdot" style="background:#0B0A09"></i>void</span></div>
+        <div class="kv"><b>III Blood Meridian</b><span><i class="swdot" style="background:#BDA997"></i>ash<i class="swdot" style="background:#0B0A09"></i>void<i class="swdot" style="background:#EE9222"></i>hot<i class="swdot" style="background:#2161B1"></i>cobalt</span></div>
+        <p class="small dim" style="margin-top:14px">Eén track = één grondkleur. Meng de gronden nooit in hetzelfde beeld; wissel ze af over de feed.</p>
+      </div>
+      <div class="card black">
+        <span class="lbl">Contrast — echte waarden (WCAG)</span>
+        <div class="tablewrap">
+        <table>
+          <thead><tr><th>Combinatie</th><th>Ratio</th><th>Verdict</th></tr></thead>
+          <tbody>
+            <tr><td>Zwart op bot</td><td class="n">10.6</td><td>Alles toegestaan</td></tr>
+            <tr><td>Zwart op ash</td><td class="n">8.7</td><td>Alles toegestaan</td></tr>
+            <tr><td>Zwart op blush</td><td class="n">7.5</td><td>Alles toegestaan</td></tr>
+            <tr><td>Bot op zwart</td><td class="n">10.6</td><td>Bodytekst op donker</td></tr>
+            <tr><td>Goud op zwart</td><td class="n">6.5</td><td>Titels &amp; labels</td></tr>
+            <tr><td>Zwart op rood</td><td class="n">4.4</td><td>Alleen ≥ 24 px</td></tr>
+            <tr><td>Rood op zwart</td><td class="n">4.4</td><td>Alleen ≥ 24 px, nooit lopende tekst</td></tr>
+            <tr style="color:var(--red)"><td>Rood op bot</td><td class="n">2.4</td><td>Nooit tekst</td></tr>
+            <tr style="color:var(--red)"><td>Goud op bot</td><td class="n">1.6</td><td>Nooit tekst</td></tr>
+            <tr style="color:var(--red)"><td>Rood op blush</td><td class="n">1.7</td><td>Nooit tekst</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p class="small dim">Vuistregel: <strong>zwart op een grondkleur</strong> of <strong>bot/goud op zwart</strong>. Alles daarbuiten is decoratie, geen informatie.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:24px;border-color:var(--red)">
+      <span class="lbl">Let op in donkere interfaces</span>
+      <p class="small" style="margin:0">Spotify, Instagram en Facebook tonen je beeld standaard op <strong>bijna-zwart (#121212)</strong>. Een cover met zwarte randen smelt daarin weg. Zorg dus dat elk vierkant asset een <strong>grondkleur tot aan de rand</strong> heeft (blush, bone of ash) — zoals de drie artworks al doen. Zwart mag domineren in het midden, nooit aan de buitenrand.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IV — TYPOGRAFIE ============ -->
+<section id="s4" class="light grain grain-light">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="numeral">IV</div>
+      <div>
+        <h2 class="sect-title">Typografie</h2>
+        <p class="meta dim">Boven het systeem staat het getekende logotype (zie II). Daaronder: vier lettertypes, allemaal gratis en vrij voor commercieel gebruik (SIL OFL). Geen enkel ander lettertype komt in een GINDER-asset.</p>
+      </div>
+    </div>
+
+    <div class="grid g2">
+      <div class="card" style="background:var(--void);color:var(--bone);border-color:rgba(192,138,59,.5)">
+        <span class="lbl" style="color:var(--gold)">Display — Pirata One (familie van het logotype)</span>
+        <div class="black" style="font-size:clamp(34px,6.4vw,66px);color:var(--gold);margin:6px 0 14px">Göbekli Tepe</div>
+        <ul class="small">
+          <li class="ok">Voor <strong>tracktitels</strong> en losse woorden — niet voor de bandnaam.</li>
+          <li class="ok">De bandnaam zet je <strong>nooit</strong> in dit font: daarvoor bestaat het logotype.</li>
+          <li class="ok">Altijd Kapitaal + kleine letters. Nooit ALL CAPS.</li>
+          <li class="ok">Minimum 28 px, letterafstand +1 tot +2%, max 4 woorden.</li>
+        </ul>
+      </div>
+      <div class="card" style="background:var(--void);color:var(--bone);border-color:rgba(192,138,59,.5)">
+        <span class="lbl" style="color:var(--gold)">Headline — Archivo Black</span>
+        <div class="arch" style="font-size:clamp(22px,4vw,40px);color:var(--red);margin:6px 0 14px">Nieuwe EP<br>14.11.2026</div>
+        <ul class="small">
+          <li class="ok">ALTIJD HOOFDLETTERS, letterafstand +4%.</li>
+          <li class="ok">Voor: data, venues, "out now", story-tekst, CTA's.</li>
+          <li class="ok">Max 6 woorden per blok, 2 regels.</li>
+          <li class="ok">Links uitlijnen of gecentreerd — nooit rechts.</li>
+        </ul>
+      </div>
+      <div class="card" style="background:var(--void);color:var(--bone);border-color:rgba(192,138,59,.5)">
+        <span class="lbl" style="color:var(--gold)">Body — Inter</span>
+        <div style="font-size:19px;margin:6px 0 14px;line-height:1.5">Een drieluik over devotie, geweld<br>en de grap die daar tussen zit.</div>
+        <ul class="small">
+          <li class="ok">400 voor lopende tekst, 600 voor nadruk.</li>
+          <li class="ok">Bio's, persberichten, lange captions, alt-teksten.</li>
+          <li class="ok">Regelafstand 1.5–1.65. Max 72 tekens per regel.</li>
+        </ul>
+      </div>
+      <div class="card" style="background:var(--void);color:var(--bone);border-color:rgba(192,138,59,.5)">
+        <span class="lbl" style="color:var(--gold)">Micro — Space Mono</span>
+        <div class="mono" style="font-size:16px;margin:6px 0 14px;letter-spacing:.1em">TRACK II — 04:17 — B-SIDE<br>GINDER © 2026</div>
+        <ul class="small">
+          <li class="ok">Labels, credits, speelduur, data, tracknummers.</li>
+          <li class="ok">Letterafstand +14 tot +22%, altijd caps.</li>
+          <li class="ok">Nooit groter dan de headline ernaast.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <h3>Typografische schaal voor social assets</h3>
+    <p class="small dim">Puntgroottes op het échte canvas — zo hoef je niets om te rekenen. Alles onder de minimumwaarde overleeft de compressie van Instagram niet.</p>
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>Rol</th><th>Font</th><th>1080 × 1350 (feed)</th><th>1080 × 1920 (story/reel)</th><th>3000 × 3000 (cover)</th></tr></thead>
+      <tbody>
+        <tr><td>Display / titel</td><td>Pirata One</td><td class="n">120–190 px</td><td class="n">150–240 px</td><td class="n">380–620 px</td></tr>
+        <tr><td>Headline</td><td>Archivo Black</td><td class="n">64–96 px</td><td class="n">72–110 px</td><td class="n">180–300 px</td></tr>
+        <tr><td>Subkop</td><td>Archivo Black</td><td class="n">38–48 px</td><td class="n">44–56 px</td><td class="n">120–160 px</td></tr>
+        <tr><td>Body</td><td>Inter 400</td><td class="n">32–40 px</td><td class="n">38–46 px</td><td class="n">—</td></tr>
+        <tr><td>Micro / credits</td><td>Space Mono</td><td class="n">22–26 px</td><td class="n">26–30 px</td><td class="n">70–90 px</td></tr>
+        <tr style="color:#9E180E"><td><strong>Absoluut minimum</strong></td><td>—</td><td class="n">28 px</td><td class="n">32 px</td><td class="n">90 px</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="dd" style="margin-top:12px">
+      <div class="do">
+        <h4>Typografische regels</h4>
+        <ul>
+          <li class="ok">Tekst staat op een <strong>vlak</strong> (zwarte balk, gouden lijn, lege grond), niet over een druk beeld.</li>
+          <li class="ok">Eén display-element per asset. De rest is Archivo of Mono.</li>
+          <li class="ok">Tracktitels altijd exact zoals in de metadata — ook de hoofdletters.</li>
+          <li class="ok">Lange titeltrack mag over 2 of 3 regels, afgebroken op "inside" en "and".</li>
+        </ul>
+      </div>
+      <div class="dont">
+        <h4>Nooit</h4>
+        <ul>
+          <li>Slagschaduw, outline, verloop of "glow" op tekst.</li>
+          <li>Pirata One in ALL CAPS of onder 28 px.</li>
+          <li>Een vijfde lettertype, inclusief de standaardfonts van Instagram-stickers.</li>
+          <li>Tekst over het gezicht, de kop of de ogen van een figuur.</li>
+          <li>Gecentreerde lopende tekst van meer dan 2 regels.</li>
+          <li>Cursief — geen van de vier fonts heeft een echte cursief.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:22px">
+      <span class="lbl">Licenties &amp; downloads</span>
+      <div class="kv"><b>Pirata One</b><span>SIL OFL 1.1 — fonts.google.com/specimen/Pirata+One — alternatief: UnifrakturMaguntia</span></div>
+      <div class="kv"><b>Archivo Black</b><span>SIL OFL 1.1 — fonts.google.com/specimen/Archivo+Black</span></div>
+      <div class="kv"><b>Inter</b><span>SIL OFL 1.1 — fonts.google.com/specimen/Inter</span></div>
+      <div class="kv"><b>Space Mono</b><span>SIL OFL 1.1 — fonts.google.com/specimen/Space+Mono</span></div>
+      <p class="small dim" style="margin-top:12px">Alle vier mogen gebruikt worden voor merch, print, video en logo's. Bewaar een kopie van de fontbestanden in de bandmap, zodat niemand ooit "een gelijkaardig font" moet zoeken.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ---- components for sections V–IX ---- */
+.motif{border:1px solid rgba(192,138,59,.4);padding:16px;text-align:center;background:#0B0A09}
+.light .motif,.blush .motif,.ash .motif{border-color:rgba(11,10,9,.25)}
+.motif svg{width:100%;height:86px;display:block}
+.motif .nm{font-family:'MonoG',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  margin-top:12px;color:var(--gold)}
+.motif .ds{font-size:12px;line-height:1.4;opacity:.7;margin-top:5px;color:var(--bone)}
+.g6{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+@media(max-width:1000px){.g6{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.g6{grid-template-columns:repeat(2,1fr)}}
+
+.crop{position:relative;overflow:hidden;border:1px solid rgba(11,10,9,.35);background:#0B0A09}
+.crop .im{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto}
+.r11{aspect-ratio:1}.r45{aspect-ratio:4/5}.r34{aspect-ratio:3/4}.r916{aspect-ratio:9/16}.r191{aspect-ratio:1.91}
+.caption{font-family:'MonoG',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  margin-top:8px;opacity:.75}
+
+/* phone / safe-zone mock */
+.phone{position:relative;width:100%;max-width:260px;margin:0 auto;aspect-ratio:9/16;background:#0B0A09;
+  border:2px solid rgba(192,138,59,.5);overflow:hidden}
+.phone>.im{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto}
+.zone{position:absolute;left:0;right:0;background:repeating-linear-gradient(45deg,rgba(228,46,34,.62) 0 7px,rgba(228,46,34,.28) 7px 14px);
+  display:flex;align-items:center;justify-content:center;font-family:'MonoG',monospace;font-size:9px;
+  letter-spacing:.1em;color:#0B0A09;text-align:center;text-transform:uppercase;padding:3px}
+.zone.side{top:0;bottom:0;left:auto;right:0;width:11%;writing-mode:vertical-rl}
+.zone.side.l{left:0;right:auto;width:5.5%}
+.safebox{position:absolute;border:1.5px dashed var(--gold);display:flex;align-items:flex-end;justify-content:center;
+  font-family:'MonoG',monospace;font-size:9px;letter-spacing:.1em;color:var(--gold);padding-bottom:4px}
+.ui-chip{position:absolute;font-family:'MonoG',monospace;font-size:8px;letter-spacing:.08em;
+  color:rgba(255,255,255,.85);background:rgba(0,0,0,.45);padding:2px 5px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;font-family:'MonoG',monospace;font-size:10.5px;letter-spacing:.08em}
+.legend i{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-2px}
+
+/* thumbnail test */
+.thumbrow{display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.thumbrow figure{margin:0}
+.thumbrow .im{border:1px solid rgba(192,138,59,.4)}
+
+/* IG grid */
+.grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;max-width:420px}
+.grid9 .cell{aspect-ratio:3/4;overflow:hidden;position:relative;background:#0B0A09}
+.grid9 .cell .im{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto}
+.grid9 .cell .tag{position:absolute;left:0;bottom:0;background:rgba(11,10,9,.8);color:var(--gold);
+  font-family:'MonoG',monospace;font-size:8px;letter-spacing:.1em;padding:2px 4px}
+.grid9 .txt{display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;
+  font-family:'ArchivoBlack',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;line-height:1.2}
+
+/* platform header band */
+.plat{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+.plat .ico{width:42px;height:42px;flex:0 0 auto}
+.specbox{border-left:3px solid var(--red);padding:4px 0 4px 16px;margin:18px 0}
+.specbox .lbl{color:var(--red);display:block;margin-bottom:6px}
+
+/* carousel strip */
+.strip{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px}
+.strip .sl{flex:0 0 150px;aspect-ratio:4/5;border:1px solid rgba(11,10,9,.3);position:relative;
+  display:flex;flex-direction:column;justify-content:flex-end;padding:10px;background:#0B0A09;color:var(--bone)}
+.strip .sl .n{position:absolute;top:7px;left:9px;font-family:'MonoG',monospace;font-size:9px;color:var(--gold);letter-spacing:.14em}
+.strip .sl .t{font-family:'ArchivoBlack',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.04em;line-height:1.25}
+.strip .sl .im{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;opacity:.55}
+.strip .sl .t,.strip .sl .n{position:relative;z-index:2}
+</style>
+
+<!-- ============ V — BEELDTAAL ============ -->
+<section id="s5" class="dark grain">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="numeral">V</div>
+      <div>
+        <h2 class="sect-title">Beeldtaal &amp; motieven</h2>
+        <p class="meta dim">Het artwork is al af. Dit hoofdstuk gaat over alles wat je <em>zelf</em> maakt: stories, teasers, lyric cards, merch, posters.</p>
+      </div>
+    </div>
+
+    <div class="grid g3">
+      <div class="card"><span class="lbl">01</span><h4>Frontaal of strikt profiel</h4><p class="small dim" style="margin:0">Een figuur kijkt je recht aan of loopt dwars door het frame. Nooit driekwart, nooit "toevallig gevangen".</p></div>
+      <div class="card"><span class="lbl">02</span><h4>Het altaar: lege ruimte</h4><p class="small dim" style="margin:0">Minstens 35% van het frame is lege grondkleur. Die leegte maakt het beeld sacraal — vul ze niet op met tekst.</p></div>
+      <div class="card"><span class="lbl">03</span><h4>Plat + geschilderd</h4><p class="small dim" style="margin:0">Vlakke kleurvelden, zichtbare verftextuur, doekkorrel. Geen diepte, geen perspectief, geen schaduwspel.</p></div>
+      <div class="card"><span class="lbl">04</span><h4>Eén rode schreeuw</h4><p class="small dim" style="margin:0">Per beeld is er precies één ding dat rood schreeuwt. Twee rode brandpunten = geen brandpunt.</p></div>
+      <div class="card"><span class="lbl">05</span><h4>Symbool boven uitleg</h4><p class="small dim" style="margin:0">Een oog, een tand, een bliksem. Nooit een pijl, een duim, een emoji of een "swipe"-sticker.</p></div>
+      <div class="card"><span class="lbl">06</span><h4>Absurde details, droge toon</h4><p class="small dim" style="margin:0">Stippen, dambord, sokken: het mag belachelijk zijn, maar het wordt nooit gepresenteerd als grap.</p></div>
+    </div>
+
+    <div class="rule"></div>
+
+    <h3 style="color:var(--gold)">Motievenkit</h3>
+    <p class="small dim">Deze negen vormen vormen de volledige grafische woordenschat. Alles wat je tekent, bouw je hiermee — niets anders.</p>
+    <div class="g6" style="margin-top:18px">
+      <div class="motif"><svg viewBox="0 0 100 60" aria-hidden="true"><path d="M4 30C22 6 78 6 96 30 78 54 22 54 4 30Z" fill="#E42E22"/><circle cx="50" cy="30" r="13" fill="#0B0A09"/><circle cx="50" cy="30" r="6" fill="#EE9222"/></svg><div class="nm">Oog</div><div class="ds">Waakzaamheid. Werkt in rijen.</div></div>
+      <div class="motif"><svg viewBox="0 0 100 60" aria-hidden="true"><path d="M50 2 62 58H38Z" fill="#E42E22"/><path d="M20 14 28 58H12Z" fill="#C08A3B"/><path d="M80 14 88 58H72Z" fill="#C08A3B"/></svg><div class="nm">Spike / tand</div><div class="ds">Randen, kronen, scheidingslijnen.</div></div>
+      <div class="motif"><svg viewBox="0 0 100 60" aria-hidden="true"><path d="M48 58C30 48 12 34 10 6c14 6 26 18 34 34z" fill="#D4BA96"/><path d="M52 58c18-10 36-24 38-52-14 6-26 18-34 34z" fill="#D4BA96"/></svg><div class="nm">Horens</div><div class="ds">Silhouet. Alleen als omtrek.</div></div>
+      <div class="motif"><svg viewBox="0 0 100 60" aria-hidden="true"><path d="M8 34 56 2 44 26h20L22 58l14-24z" fill="#C08A3B"/><path d="M70 50 96 32 84 44h10L74 58z" fill="#C08A3B" opacity=".7"/></svg><div class="nm">Bliksem</div><div class="ds">Goudfolie-vorm, nooit blauw.</div></div>
+      <div class="motif"><svg viewBox="0 0 100 60" aria-hidden="true"><g stroke="#E42E22" stroke-width="2.4"><path d="M50 30 50 2M50 30 50 58M50 30 22 30M50 30 78 30M50 30 30 10M50 30 70 50M50 30 70 10M50 30 30 50"/></g><circle cx="50" cy="30" r="9" fill="#EE9222"/><circle cx="50" cy="30" r="4" fill="#0B0A09"/></svg><div class="nm">Zon / halo</div><div class="ds">Achter het figuur, nooit ervoor.</div></div>
+      <div class="motif"><svg viewBox="0 0 100 60" aria-hidden="true"><g fill="#C08A3B"><rect x="10" y="4" width="20" height="17"/><rect x="50" y="4" width="20" height="17"/><rect x="30" y="21" width="20" height="17"/><rect x="70" y="21" width="20" height="17"/><rect x="10" y="38" width="20" height="17"/><rect x="50" y="38" width="20" height="17"/></g></svg><div class="nm">Dambord</div><div class="ds">Kleding en kaders. Nooit groter dan 25% van het vlak.</div></div>
+      <div class="motif"><svg viewBox="0 0 100 60" aria-hidden="true"><g fill="#D4BA96"><circle cx="14" cy="12" r="5"/><circle cx="38" cy="12" r="5"/><circle cx="62" cy="12" r="5"/><circle cx="86" cy="12" r="5"/><circle cx="26" cy="30" r="5"/><circle cx="50" cy="30" r="5"/><circle cx="74" cy="30" r="5"/><circle cx="14" cy="48" r="5"/><circle cx="38" cy="48" r="5"/><circle cx="62" cy="48" r="5"/><circle cx="86" cy="48" r="5"/></g></svg><div class="nm">Stippen</div><div class="ds">De grap. Alleen op kledij/vlakken.</div></div>
+      <div class="motif"><svg viewBox="0 0 100 60" aria-hidden="true"><g><path d="M30 2v56M50 2v56M70 2v56" stroke="#C08A3B" stroke-width="1"/><g fill="#D4BA96"><circle cx="30" cy="10" r="4"/><circle cx="30" cy="22" r="4"/><circle cx="30" cy="34" r="4"/><circle cx="30" cy="46" r="4"/><circle cx="50" cy="14" r="4"/><circle cx="50" cy="26" r="4"/><circle cx="50" cy="38" r="4"/><circle cx="50" cy="50" r="4"/><circle cx="70" cy="10" r="4"/><circle cx="70" cy="22" r="4"/><circle cx="70" cy="34" r="4"/><circle cx="70" cy="46" r="4"/></g></g></svg><div class="nm">Kralensnoer</div><div class="ds">Verticale hangers langs de randen.</div></div>
+      <div class="motif"><svg viewBox="0 0 100 60" aria-hidden="true"><path d="M50 4 76 30 50 56 24 30Z" fill="#E42E22"/><circle cx="50" cy="30" r="10" fill="#0B0A09"/><circle cx="50" cy="30" r="5" fill="#EE9222"/><circle cx="50" cy="30" r="2" fill="#0B0A09"/></svg><div class="nm">Ruitoog</div><div class="ds">Het icoon van Blood Meridian. Repeteerbaar.</div></div>
+    </div>
+
+    <div class="grid g3" style="margin-top:26px">
+      <figure style="margin:0"><span class="im i-det-eyes" role="img" aria-label="Detail: rij ogen" style="border:1px solid rgba(192,138,59,.4)"></span><figcaption class="caption">Ogen in rijen — Göbekli Tepe</figcaption></figure>
+      <figure style="margin:0"><span class="im i-det-bolt" role="img" aria-label="Detail: bliksem in bladgoud" style="border:1px solid rgba(192,138,59,.4)"></span><figcaption class="caption">Bladgoud-bliksem — EP-cover</figcaption></figure>
+      <figure style="margin:0"><span class="im i-det-check" role="img" aria-label="Detail: dambordpatroon" style="border:1px solid rgba(192,138,59,.4)"></span><figcaption class="caption">Dambord &amp; ruiten — Blood Meridian</figcaption></figure>
+    </div>
+
+    <div class="rule"></div>
+
+    <h3 style="color:var(--gold)">Wat de teksten toevoegen</h3>
+    <p class="small dim" style="max-width:72ch">De motievenkit blijft dicht — de teksten voegen geen vormen toe, ze vertellen je <em>welke</em> vorm wanneer juist is. Lees ze als een briefing per track.</p>
+    <div class="grid g3" style="margin-top:18px">
+      <div class="card">
+        <span class="lbl" style="color:var(--gold)">1ste release — titeltrack</span>
+        <div class="kv"><b>Woordveld</b><span>draden · keel · puls als code · doolhof · pixels · symmetrie · spoken achter het kader</span></div>
+        <div class="kv"><b>Dus</b><span>de enige track waar <strong>het raster zichtbaar mag worden</strong>: lijnen, spiegeling, het frame zelf</span></div>
+        <div class="kv"><b>Motieven</b><span>bliksem · halo · dambord</span></div>
+        <p class="small dim" style="margin:12px 0 0">Dit is de track die naar het publiek kijkt. Hier mag een asset ongemakkelijk symmetrisch zijn.</p>
+      </div>
+      <div class="card">
+        <span class="lbl">2de release — Göbekli Tepe</span>
+        <div class="kv"><b>Woordveld</b><span>opgraven · modder · sluier · offers · koolstof · graven die openblijven</span></div>
+        <div class="kv"><b>Dus</b><span>alles komt <strong>uit de grond</strong>: lagen, stof, dingen die half bedekt zijn</span></div>
+        <div class="kv"><b>Motieven</b><span>oog in rijen · kralensnoer · horens</span></div>
+        <p class="small dim" style="margin:12px 0 0">Vraag je bij elke story: ziet dit eruit alsof het net is blootgelegd? Zo niet, voeg stof toe, geen glans.</p>
+      </div>
+      <div class="card">
+        <span class="lbl">3de release — Blood Meridian</span>
+        <div class="kv"><b>Woordveld</b><span>plotse kou · rot · wolven · vlees en vuur · goud dat blijft</span></div>
+        <div class="kv"><b>Dus</b><span>warm en koud in één beeld: <strong>bladgoud tegen as</strong>, nooit zacht licht</span></div>
+        <div class="kv"><b>Motieven</b><span>ruitoog · spike/tand · stippen</span></div>
+        <p class="small dim" style="margin:12px 0 0">De enige track waar goud het hoofdelement mag zijn in plaats van accent — het staat letterlijk in de tekst.</p>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <div class="grid g2">
+      <div>
+        <h3 style="color:var(--gold)">Textuur</h3>
+        <ul>
+          <li>Elk vlak krijgt <strong>doek- of papierkorrel</strong>: een grain-overlay op 6–12% dekking, blendmodus Vermenigvuldigen.</li>
+          <li>Goud is <strong>mat</strong>: bladgoud met barsten, geen verloop, geen glans-highlight.</li>
+          <li>Randen mogen <strong>licht versleten</strong> zijn — alsof het paneel in een kist heeft gelegen.</li>
+          <li>Geen enkel element is perfect scherp of perfect recht; een beetje scheef is juist.</li>
+        </ul>
+      </div>
+      <div class="dd" style="grid-template-columns:1fr">
+        <div class="dont">
+          <h4>Beeldzonden</h4>
+          <ul>
+            <li>Een filter over het artwork (zwart-wit, sepia, "film").</li>
+            <li>Het artwork uitrekken naar 9:16. Verleng de grondkleur in plaats daarvan.</li>
+            <li>Spiegelen of dupliceren om een frame te vullen.</li>
+            <li>Nieuwe kleuren introduceren (paars, groen, wit).</li>
+            <li>Een figuur bijsnijden door een oog, hoorn of tand heen.</li>
+            <li>AI-gegenereerde "gelijkaardige" beelden ernaast zetten die het palet niet volgen.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VI — ARTWORK & CROPPEN ============ -->
+<section id="s6" class="ash grain grain-light">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="numeral">VI</div>
+      <div>
+        <h2 class="sect-title">Artwork &amp; croppen</h2>
+        <p class="meta dim">Vier artworks — drie singles en de EP-cover — en twintig goedgekeurde uitsnedes. Hier staat hoe je van vierkant naar verticaal gaat zonder het beeld te slopen.</p>
+      </div>
+    </div>
+
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>Master</th><th>Bestandsnaam</th><th>Resolutie</th><th>Primair gebruik</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1 — titeltrack</strong> (single)</td><td class="n">she_brought_the_storm.jpeg</td><td class="n">1254 × 1254 <strong style="color:#9E180E">⚠ te klein</strong></td><td>Single-cover, eerste release, Canvas 1</td></tr>
+        <tr><td>2 — Göbekli Tepe (single)</td><td class="n">gobeklitepePriest_MASTER.png</td><td class="n">3000 × 3000</td><td>Single-cover, Canvas 2, aankondiging</td></tr>
+        <tr><td>3 — Blood Meridian (single)</td><td class="n">bloodMeridian_MASTER.png</td><td class="n">3000 × 4008 (3:4)</td><td>Single-cover, posters, stories, Canvas 3</td></tr>
+        <tr><td><strong>EP-cover</strong></td><td class="n">original_gospel.png</td><td class="n">4096 × 4096</td><td>De EP zelf, hero in ads, Spotify-header, FB-omslag</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="card" style="border-color:var(--red);background:rgba(228,46,34,.08)">
+      <span class="lbl" style="color:#9E180E">Eerst oplossen — het gaat om de eerste release</span>
+      <p class="small" style="margin:0 0 8px"><strong>Het single-artwork van de titeltrack is 1254 × 1254.</strong> Spotify vraagt 3000 × 3000 en distributeurs weigeren onder 1400 × 1400. Dit is het beeld dat als éérste de deur uit gaat, dus hermaster het: opnieuw renderen of scannen op <strong>3000 × 3000</strong>. Niet opschalen — dat ziet een keuringssysteem én het oog.</p>
+      <p class="small" style="margin:0">Zolang dat niet gebeurd is, zijn de crops van deze single <strong>voorlopig</strong>: ze zijn op ware grootte gemaakt (geen opschaling), er zijn geen 2160-varianten en de 1:1 staat op 1254 px in plaats van 3000. Zodra de hi-res master er is: <span class="mono">python3 src/crops.py</span> opnieuw draaien en alles komt in de juiste maat terug.</p>
+    </div>
+
+    <div class="card" style="margin-top:14px;border-color:rgba(29,107,47,.55);background:rgba(29,107,47,.07)">
+      <span class="lbl" style="color:#1d6b2f">Opgelost</span>
+      <p class="small" style="margin:0 0 8px"><strong>1.</strong> De EP-cover stond eerst op 1000 × 1000. De master is nu <strong>4096 × 4096</strong> en gaat als 3000 × 3000 naar de distributeur. Downscalen mag, opschalen nooit.</p>
+      <p class="small" style="margin:0"><strong>2.</strong> Blood Meridian is 3:4 en past nergens vanzelf. Alle vierkante en verticale uitsnedes zijn één keer vastgelegd en liggen klaar in <span class="mono">02_crops/</span> — nooit meer ad hoc hersnijden per platform.</p>
+    </div>
+
+    <h3 style="margin-top:34px">Vaste crops per master</h3>
+    <p class="small dim" style="margin:-4px 0 16px;max-width:66ch">Er zijn twee methodes, en het artwork bepaalt welke. <strong>Doek laten groeien</strong> als er een vrije rand is, <strong>paneel op grondkleur</strong> als het beeld alle vier de randen raakt. Nooit uitrekken, nooit spiegelen, nooit het figuur bijsnijden.</p>
+    <p class="small" style="margin:0 0 16px;max-width:66ch"><strong>A — doek laten groeien</strong> (Göbekli Tepe, Blood Meridian, EP-cover): de figuur blijft op zijn plek en op zijn ware verhouding, de grond groeit mee met de korrel van het schilderij zelf.</p>
+    <div class="grid g3" style="margin-top:16px">
+      <div>
+        <div class="crop r11"><span class="im i-crop-gobekli-11" role="img" aria-label="1:1 crop"></span></div>
+        <div class="caption">1:1 — cover, feed, avatar-bron · <span class="mono">het origineel, onaangeroerd</span></div>
+      </div>
+      <div>
+        <div class="crop r45"><span class="im i-crop-gobekli-45" role="img" aria-label="4:5 crop"></span></div>
+        <div class="caption">4:5 — Instagram-feed · <span class="mono">+750 px blush bovenaan</span></div>
+      </div>
+      <div>
+        <div class="crop r916"><span class="im i-crop-gobekli-916" role="img" aria-label="9:16 crop"></span></div>
+        <div class="caption">9:16 — story / reel / Canvas · <span class="mono">+2333 px, tekst in de lucht</span></div>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:26px;align-items:center">
+      <div>
+        <p class="small" style="margin:0 0 10px;max-width:60ch"><strong>B — paneel op grondkleur</strong> (de single van de titeltrack): bliksems raken de bovenrand, het gewaad de onderrand en de hoorns bijna de zijkanten. Er is geen vrije rand om te laten groeien en elke strakke uitsnede snijdt door een hoorn.</p>
+        <ul class="small">
+          <li>Het hele doek blijft heel en komt <strong>als paneel</strong> op een vlak van de eigen grondkleur te staan, met dezelfde korrel.</li>
+          <li>De geschilderde rand van het paneel blijft zichtbaar — daardoor leest het als een schilderij aan een muur, niet als een afgesneden beeld.</li>
+          <li>De band eronder is <strong>het altaar</strong>: daar komt tekst, nergens anders.</li>
+          <li>Werkt alleen met de korrel van dat artwork zelf. Nooit een effen kleurvlak eronder plakken.</li>
+        </ul>
+      </div>
+      <div style="display:flex;justify-content:center">
+        <figure style="margin:0;max-width:260px">
+          <div class="crop r916"><span class="im i-crop-storm-916" role="img" aria-label="9:16 paneel van de single"></span></div>
+          <div class="caption">9:16 — single titeltrack · <span class="mono">paneel + grondvlak</span></div>
+        </figure>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:28px;background:var(--void);border-color:rgba(192,138,59,.45)">
+      <span class="lbl" style="color:var(--gold)">Alle twintig — klaar in 02_crops/</span>
+      <span class="im i-crops-overzicht" role="img" aria-label="Overzicht van de twintig vaste crops: drie singles en de EP-cover, elk maal vier ratio's" style="margin:14px 0 4px;border:1px solid rgba(192,138,59,.25)"></span>
+      <div class="grid g2" style="margin-top:16px;align-items:start">
+        <div>
+          <div class="kv" style="color:var(--bone)"><b style="color:var(--gold)">Naam</b><span class="mono" style="font-size:12px">GINDER_gospel_crop-&lt;artwork&gt;-&lt;ratio&gt;_&lt;b&gt;x&lt;h&gt;_v01.jpg</span><br><span class="mono" style="font-size:11px;opacity:.75">artwork = storm · gobekli · blood · epcover</span></div>
+          <div class="kv" style="color:var(--bone)"><b style="color:var(--gold)">Levering</b><span>1:1 op 3000 px · alle ratio's op 1080 px · <span class="mono">hires/</span> op 2160 px. De single van de titeltrack voorlopig op ware grootte: 1254 px, geen hires</span></div>
+          <div class="kv" style="color:var(--bone)"><b style="color:var(--gold)">Techniek</b><span>JPEG q92, 4:4:4, sRGB — geen upscaling, geen filter</span></div>
+        </div>
+        <div>
+          <p class="small" style="margin:0;color:var(--bone)"><strong style="color:var(--gold)">Waarom per artwork iets anders:</strong> bij de <em>EP-cover</em> raken de bliksems de bovenrand, dus daar groeit het rotspuin onderaan mee; de 9:16 is een strakke uitsnede op de figuur, waarbij het logotype bewust wegvalt — dat hoort niet op een Canvas. Bij <em>blood</em> komt de ruimte boven het hoofd; onderaan niets, anders zweven de voeten los boven de as. De <em>single</em> raakt alle vier de randen en wordt daarom een paneel.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:30px">
+      <div>
+        <h3>Croppen: de regels</h3>
+        <ul>
+          <li><strong>Nooit door een oog, hoorn of tand snijden.</strong> Liever het figuur kleiner dan half.</li>
+          <li>Bij 9:16: <strong>verleng de grondkleur</strong> boven en onder (effen, met dezelfde korrel). Nooit uitrekken, nooit spiegelen, nooit blurren.</li>
+          <li>Het figuur blijft <strong>horizontaal gecentreerd</strong>. Verticaal mag het naar onder zakken — de lege lucht erboven is het "altaar" voor tekst.</li>
+          <li>Blood Meridian (3:4 → 1:1): snij van <strong>onderaan</strong>, hou kop + romp. De voeten mogen weg, de tong niet.</li>
+          <li>Eén goedgekeurde crop per ratio, opgeslagen als eigen bestand in de assetmap. Niet improviseren in de app.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tekst op artwork</h3>
+        <ul>
+          <li>Tekst leeft in de <strong>lege grond</strong>, nooit over het figuur.</li>
+          <li>Heb je geen lege ruimte? Zet een <strong>zwarte of gouden balk</strong> over de volledige breedte en zet de tekst daarin.</li>
+          <li>Houd minstens <strong>5% van de breedte</strong> marge tot elke rand (54 px op 1080).</li>
+          <li>Op een coverafbeelding (Spotify/Apple) komt <strong>geen tekst</strong> behalve wat er al in het artwork zit.</li>
+        </ul>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px">
+          <div>
+            <div class="crop r11" style="display:flex;align-items:flex-end">
+              <span class="im i-blood" aria-hidden="true" style="position:absolute;inset:0;background-position:center 32%"></span>
+              <div style="position:relative;width:100%;background:var(--void);padding:9px 10px">
+                <div class="arch" style="font-size:11px;color:var(--bone);letter-spacing:.06em">EP — 14.11.2026</div>
+              </div>
+            </div>
+            <div class="caption" style="color:#1d6b2f">✔ balk over volle breedte</div>
+          </div>
+          <div>
+            <div class="crop r11" style="display:flex;align-items:center;justify-content:center">
+              <span class="im i-blood" aria-hidden="true" style="position:absolute;inset:0;background-position:center 32%"></span>
+              <div class="arch" style="position:relative;font-size:15px;color:#fff;text-shadow:0 2px 6px #000;text-align:center">EP OUT<br>NOW!!</div>
+            </div>
+            <div class="caption" style="color:#9E180E">✘ tekst + schaduw over de kop</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VII — SPOTIFY ============ -->
+<section id="s7" class="dark grain">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="numeral">VII</div>
+      <div>
+        <h2 class="sect-title">Spotify</h2>
+        <p class="meta dim">Hier wordt je beeld het kleinst getoond én het strengst gecontroleerd. Eén afgekeurde cover kan een release dagen vertragen.</p>
+      </div>
+    </div>
+
+    <div class="specbox">
+      <span class="lbl">Cover art — releaseartwork</span>
+      <div class="grid g2">
+        <div>
+          <div class="kv"><b>Formaat</b><span>3000 × 3000 px, exact vierkant (1:1)</span></div>
+          <div class="kv"><b>Minimum</b><span>640 × 640 (Spotify) — maar distributeurs eisen ≥ 1400 × 1400</span></div>
+          <div class="kv"><b>Bestand</b><span>JPG of PNG, sRGB, 24-bit, &lt; 10 MB</span></div>
+          <div class="kv"><b>Kleurruimte</b><span>sRGB — nooit CMYK, nooit Adobe RGB</span></div>
+          <div class="kv"><b>Randen</b><span>geen kaders, geen letterboxing, bleed tot de rand</span></div>
+        </div>
+        <div>
+          <div class="kv"><b>Verboden</b><span>URL's, @handles, QR-codes, e-mail, prijzen</span></div>
+          <div class="kv"><b>Verboden</b><span>"Out now", "New single", platformlogo's</span></div>
+          <div class="kv"><b>Verboden</b><span>Parental-advisory-badge zelf toevoegen (Spotify doet dat)</span></div>
+          <div class="kv"><b>Verplicht</b><span>Artiestnaam &amp; titel exact zoals in de metadata</span></div>
+          <div class="kv"><b>Let op</b><span>Spotify hercomprimeert naar JPEG: zeer fijne details smeren uit</span></div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="color:var(--gold);margin-top:26px">De thumbnailtest</h3>
+    <p class="small dim">Zo klein wordt je cover écht getoond — hier de eerste release. Als het figuur op 64 px niet herkenbaar is, werkt de cover niet.</p>
+    <div class="thumbrow" style="margin-top:16px">
+      <figure><span class="im i-storm" aria-hidden="true" style="width:64px;height:64px"></span><figcaption class="caption">64 px — queue</figcaption></figure>
+      <figure><span class="im i-storm" aria-hidden="true" style="width:120px;height:120px"></span><figcaption class="caption">120 px — zoeklijst</figcaption></figure>
+      <figure><span class="im i-storm" aria-hidden="true" style="width:200px;height:200px"></span><figcaption class="caption">200 px — playlistkaart</figcaption></figure>
+      <figure><span class="im i-storm" aria-hidden="true" style="width:300px;height:300px"></span><figcaption class="caption">300 px — now playing</figcaption></figure>
+    </div>
+    <p class="small dim" style="margin-top:14px"><strong>Conclusie voor GINDER:</strong> het silhouet + de rode vorm dragen de herkenning. Houd daarom bij elke cover minstens één <em>groot</em> rood vlak en één duidelijk silhouet. Fijne kralensnoeren en kleine ogen verdwijnen onder de 120 px — reken daar niet op.</p>
+
+    <div class="rule"></div>
+
+    <div class="grid g2">
+      <div>
+        <h3 style="color:var(--gold)">Canvas (de loop achter de track)</h3>
+        <div class="kv"><b>Ratio</b><span>9:16 verticaal — verplicht</span></div>
+        <div class="kv"><b>Resolutie</b><span>720 × 1280 (min) tot 1080 × 1920 (max)</span></div>
+        <div class="kv"><b>Duur</b><span>3–8 s · sweet spot 4–6 s</span></div>
+        <div class="kv"><b>Bestand</b><span>MP4 (H.264) of JPG · geen audio · ≤ 25 MB, mik op &lt; 15 MB</span></div>
+        <div class="kv"><b>Loop</b><span>laatste frame moet naadloos in het eerste overgaan</span></div>
+        <div class="kv"><b>Per track</b><span>eigen Canvas in de kleur van die track</span></div>
+        <ul class="small" style="margin-top:14px">
+          <li>Geen titel of artiestnaam in beeld — Spotify toont die er al bovenop.</li>
+          <li>Geen snelle cuts, geen flikkering, geen playback/lipsync.</li>
+          <li>De interface dekt boven- en onderrand af: hou het figuur in het midden.</li>
+          <li>Beste GINDER-loops: één oog dat knippert, bliksem die oplicht, een trage inzoom op de korrel, kralen die bewegen.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="phone">
+          <span class="im i-gobekli" role="img" aria-label="Canvas safe zone"></span>
+          <div class="zone" style="top:0;height:22%">UI boven — titel &amp; menu</div>
+          <div class="zone" style="bottom:0;height:26%">UI onder — afspeelbalk</div>
+          <div class="safebox" style="top:22%;bottom:26%;left:8%;right:8%">veilige zone</div>
+        </div>
+        <div class="legend"><span><i style="background:repeating-linear-gradient(45deg,rgba(228,46,34,.62) 0 4px,rgba(228,46,34,.28) 4px 8px)"></i>wordt afgedekt</span><span><i style="border:1.5px dashed var(--gold)"></i>veilige zone</span></div>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <div class="specbox">
+      <span class="lbl">Songtekst in de app</span>
+      <div class="grid g2">
+        <div>
+          <div class="kv"><b>Via</b><span>Musixmatch — Spotify neemt geen tekst rechtstreeks aan</span></div>
+          <div class="kv"><b>Account</b><span>Musixmatch Pro, gratis tier volstaat; artiest claimen onder Roster met je Spotify-artiest-URL</span></div>
+          <div class="kv"><b>Verificatie</b><span>enkele werkdagen — doe dit <strong>nu</strong>, niet in releaseweek</span></div>
+          <div class="kv"><b>Invoer</b><span>platte tekst, regel per regel, daarna lijn per lijn synchroniseren op de audio</span></div>
+          <div class="kv"><b>Zichtbaar</b><span>enkele dagen na goedkeuring; een track moet uit zijn voor je hem kunt syncen</span></div>
+          <div class="kv"><b>Japan</b><span>loopt via PetitLyrics, niet via Musixmatch</span></div>
+        </div>
+        <div>
+          <ul class="small" style="margin:0">
+            <li>Dezelfde tekst voedt ook de <strong>lyric-sticker in Instagram Stories</strong>. Eén correcte bron, drie platformen.</li>
+            <li>Lever exact wat er gezongen wordt: geen (2x), geen [refrein], geen hoofdletters voor nadruk.</li>
+            <li><strong>Göbekli Tepe</strong> met trema, ook hier. En corrigeer eerst de tikfout <span class="mono">Bliod</span> in het refrein van Blood Meridian.</li>
+            <li>Zet het in de kalender op <strong>releasedag + 1</strong>: tracks moeten live staan voor je kunt syncen.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="color:var(--gold);margin-top:26px">Artiestprofiel</h3>
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>Asset</th><th>Minimum</th><th>Lever aan</th><th>GINDER-invulling</th></tr></thead>
+      <tbody>
+        <tr><td>Avatar (rond getoond)</td><td class="n">750 × 750</td><td class="n">1500 × 1500 JPG</td><td>Het <strong>zegel</strong> — goud op zwart. Geen volledig artwork: dat wordt pap in een cirkel. Staat klaar in <span class="mono" style="font-size:12px">00_brand/avatars/</span></td></tr>
+        <tr><td>Header</td><td class="n">2660 × 1140</td><td class="n">2660 × 1140 JPG</td><td>Blush-vlak met de priesterkop <strong>in de middelste derde</strong>. Randen worden mobiel afgesneden.</td></tr>
+        <tr><td>Galerij (tot 125)</td><td class="n">690 × 500</td><td class="n">2048 × 1152 JPG</td><td>Artworkdetails, studio, live. Max 8 beelden, alle drie de grondkleuren vertegenwoordigd.</td></tr>
+        <tr><td>Artist Pick</td><td class="n">—</td><td class="n">—</td><td>Tijdens release: de EP. Daarna: de GINDER-playlist. Verdwijnt na 14 dagen — zet een herinnering.</td></tr>
+        <tr><td>Playlistcover</td><td class="n">300 × 300</td><td class="n">640 × 640 JPG &lt; 4 MB</td><td>Eén motief uit de kit op een grondkleur. Geen tekst.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="small dim">Spotify raadt tekst, logo's en drukke achtergronden af in profielbeelden. Het zegel is een <em>beeldmerk</em> en past daarbinnen; een cover met titel erop niet. Alle profielbeelden: JPEG/PNG/GIF, max 20 MB.</p>
+
+    <div class="grid g3" style="margin-top:22px">
+      <div class="card black">
+        <span class="lbl">Spotify Codes</span>
+        <p class="small" style="margin:0">Alleen op <strong>bot of goud</strong> plaatsen, nooit op blush of rood (te weinig contrast). Minimaal 160 px breed, met een halve codehoogte vrije ruimte rondom. Op posters: onderaan rechts, in de marge, niet over het artwork.</p>
+      </div>
+      <div class="card black">
+        <span class="lbl">Pre-save &amp; links</span>
+        <p class="small" style="margin:0">Deel je een Spotify-link op Facebook, dan haalt Facebook zelf de cover op als previewbeeld — je kunt dat niet stylen. Wil je controle? Post het 1:1-artwork als foto en zet de link in de tekst, of link naar je eigen pagina met een eigen og:image van 1200 × 630.</p>
+      </div>
+      <div class="card black">
+        <span class="lbl">Checklist vóór levering</span>
+        <ul class="small" style="margin:0">
+          <li>3000 × 3000, sRGB, &lt; 10 MB</li>
+          <li>Leesbaar op 64 px</li>
+          <li>Geen URL, handle of promotekst</li>
+          <li>Titel = metadata, letter voor letter</li>
+          <li>Canvas per track klaar, 4–6 s, stil</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VIII — INSTAGRAM ============ -->
+<section id="s8" class="light grain grain-light">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="numeral">VIII</div>
+      <div>
+        <h2 class="sect-title">Instagram</h2>
+        <p class="meta dim">Het profiel is een altaarstuk: negen tegels die samen één wereld tonen. Plan per rij van drie, nooit per losse post.</p>
+      </div>
+    </div>
+
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>Asset</th><th>Formaat</th><th>Ratio</th><th>Opmerking</th></tr></thead>
+      <tbody>
+        <tr><td>Feedpost (standaard)</td><td class="n">1080 × 1350</td><td class="n">4:5</td><td>Default voor alles wat je inplant; ook de maat voor ads.</td></tr>
+        <tr><td>Feedpost (perfect in grid)</td><td class="n">1080 × 1440</td><td class="n">3:4</td><td>Enkel bij posten vanuit de app. Vult de rastertegel volledig.</td></tr>
+        <tr><td>Vierkant</td><td class="n">1080 × 1080</td><td class="n">1:1</td><td>Voor covers &amp; crossposts naar Facebook.</td></tr>
+        <tr><td>Carrousel</td><td class="n">1080 × 1350</td><td class="n">4:5</td><td>Eerste slide bepaalt de ratio van álle slides.</td></tr>
+        <tr><td>Story</td><td class="n">1080 × 1920</td><td class="n">9:16</td><td>Veilige zone: 250 px boven, 340 px onder.</td></tr>
+        <tr><td>Reel</td><td class="n">1080 × 1920</td><td class="n">9:16</td><td>Veilige zone: 220 boven, 320–340 onder, 60 links, 120 rechts.</td></tr>
+        <tr><td>Reelcover</td><td class="n">1080 × 1920</td><td class="n">9:16</td><td>In het raster zie je enkel de centrale 1080 × 1440.</td></tr>
+        <tr><td>Profielfoto</td><td class="n">320 × 320</td><td class="n">1:1</td><td>Rond getoond op ±110 px → het zegel.</td></tr>
+        <tr><td>Highlightcover</td><td class="n">1080 × 1920</td><td class="n">9:16</td><td>Icoon in het midden, binnen een cirkel van ±420 px.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="grid g2" style="margin-top:28px">
+      <div>
+        <h3>Veilige zones — story &amp; reel</h3>
+        <div style="display:flex;gap:22px;flex-wrap:wrap;margin-top:14px">
+          <div style="flex:1 1 180px">
+            <div class="phone">
+              <span class="im i-blood" role="img" aria-label="Story safe zone"></span>
+              <div class="zone" style="top:0;height:13%">250 px — naam &amp; balk</div>
+              <div class="zone" style="bottom:0;height:17.7%">340 px — reactiebalk</div>
+              <div class="safebox" style="top:13%;bottom:17.7%;left:6%;right:6%">1080 × 1330</div>
+            </div>
+            <div class="caption" style="text-align:center">Story</div>
+          </div>
+          <div style="flex:1 1 180px">
+            <div class="phone">
+              <span class="im i-blood" role="img" aria-label="Reel safe zone"></span>
+              <div class="zone" style="top:0;height:11.5%">220 px</div>
+              <div class="zone" style="bottom:0;height:17.7%">320–340 px — caption &amp; knoppen</div>
+              <div class="zone side">120 px</div>
+              <div class="zone side l"></div>
+              <div class="safebox" style="top:11.5%;bottom:17.7%;left:5.5%;right:11%">1010 × 1440</div>
+            </div>
+            <div class="caption" style="text-align:center">Reel</div>
+          </div>
+        </div>
+        <p class="small dim" style="margin-top:14px">Een reel verschijnt in drie vormen: volledig scherm (9:16), in de feed (centrale 1080 × 1350) en in het raster (centrale 1080 × 1440). <strong>Alleen de centrale 1080 × 1350 is overal zichtbaar</strong> — zet daar je kop, titel en hook.</p>
+      </div>
+      <div>
+        <h3>Het raster als drieluik</h3>
+        <p class="small dim">Plan in rijen van drie. Twee werkende schema's:</p>
+        <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:12px">
+          <div>
+            <div class="grid9" style="max-width:230px">
+              <div class="cell"><span class="im i-storm" aria-hidden="true"></span><span class="tag">1</span></div>
+              <div class="cell"><span class="im i-gobekli" aria-hidden="true"></span><span class="tag">2</span></div>
+              <div class="cell"><span class="im i-blood" aria-hidden="true"></span><span class="tag">3</span></div>
+              <div class="cell txt arch" style="background:var(--void);color:var(--bone);font-size:11px;letter-spacing:.02em">Everything<br>is change</div>
+              <div class="cell"><span class="im i-det-eyes" aria-hidden="true"></span></div>
+              <div class="cell txt" style="background:var(--red);color:var(--void)">14.11<br>2026</div>
+              <div class="cell"><span class="im i-det-sun" aria-hidden="true"></span></div>
+              <div class="cell txt" style="background:var(--bone);color:var(--void)">Credits</div>
+              <div class="cell"><span class="im i-det-halo" aria-hidden="true"></span></div>
+            </div>
+            <div class="caption">A — ritme: artwork / detail / tekst</div>
+          </div>
+          <div>
+            <ul class="small">
+              <li><strong>Rij 1:</strong> de drie single-covers naast elkaar, in releasevolgorde. Dit is je visitekaartje bij een profielbezoek.</li>
+              <li><strong>Daarna</strong> afwisselen: artwork → detailcrop → tekstkaart. Nooit twee tekstkaarten naast elkaar.</li>
+              <li>Elke rij bevat <strong>minstens één zwarte tegel</strong> en <strong>maximaal één rode</strong>.</li>
+              <li>Wissel de grondkleuren af: blush → bone → ash. Zo oogt het raster als één schilderij.</li>
+              <li>Het raster snijdt naar <strong>3:4</strong> — centreer alles en hou 240 px boven/onder vrij.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <h3>Carrousel-sjabloon (release-aankondiging)</h3>
+    <div class="strip" style="margin-top:14px">
+      <div class="sl"><span class="im i-storm" aria-hidden="true"></span><span class="n">01</span><span class="t">Single-artwork<br>+ 3 woorden</span></div>
+      <div class="sl" style="background:var(--void)"><span class="n">02</span><span class="t" style="color:var(--gold)">Tracklist<br>I · II · III</span></div>
+      <div class="sl"><span class="im i-det-eyes" aria-hidden="true"></span><span class="n">03</span><span class="t">Detail<br>+ één zin lyric</span></div>
+      <div class="sl" style="background:var(--red);color:var(--void)"><span class="n" style="color:var(--void)">04</span><span class="t">Datum<br>14.11.2026</span></div>
+      <div class="sl"><span class="im i-epcover" aria-hidden="true"></span><span class="n">05</span><span class="t">EP-cover<br>+ titel</span></div>
+      <div class="sl" style="background:var(--bone);color:var(--void)"><span class="n" style="color:#8E1E14">06</span><span class="t">Credits<br>&amp; dank</span></div>
+    </div>
+    <p class="small dim">Maximaal 6 slides. Alle slides in dezelfde ratio (4:5). Slide 1 moet alleen staand werken — hij komt ook in het raster terecht.</p>
+
+    <div class="dd" style="margin-top:22px">
+      <div class="do">
+        <h4>Wel doen</h4>
+        <ul>
+          <li class="ok">Alt-tekst bij elke post: beschrijf het beeld ("zwarte gehoornde priesterfiguur met rode ogen op zalmroze grond").</li>
+          <li class="ok">Ondertitels bij elke reel — geluid staat vaak uit.</li>
+          <li class="ok">Hashtags in CamelCase: <span class="mono">#GinderBand #BloodMeridian</span> (leesbaar voor schermlezers).</li>
+          <li class="ok">Post het artwork minstens één keer <strong>volledig onbewerkt</strong>, zonder tekst.</li>
+          <li class="ok">Highlightcovers: één motief uit de kit, goud op zwart, allemaal identiek van opbouw.</li>
+        </ul>
+      </div>
+      <div class="dont">
+        <h4>Niet doen</h4>
+        <ul>
+          <li>Artwork in 9:16 uitrekken of met witte balken plaatsen.</li>
+          <li>Instagram-stickers, GIF's, emoji-regens of de standaard storyfonts.</li>
+          <li>Tekst in de onderste 340 px van een story (verdwijnt onder de reactiebalk).</li>
+          <li>Meer dan 5 hashtags onder een post.</li>
+          <li>Screenshots van Spotify met je eigen streamcijfers.</li>
+          <li>Reposten van de feed naar story zonder achtergrond in grondkleur.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IX — FACEBOOK ============ -->
+<section id="s9" class="dark grain">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="numeral">IX</div>
+      <div>
+        <h2 class="sect-title">Facebook</h2>
+        <p class="meta dim">Facebook is het bord aan de kerkdeur: events, data, links. Het beeld is er breed en wordt op elk toestel anders bijgesneden — ontwerp dus altijd vanuit het midden.</p>
+      </div>
+    </div>
+
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>Asset</th><th>Upload</th><th>Wordt getoond als</th><th>Regel</th></tr></thead>
+      <tbody>
+        <tr><td>Profielfoto</td><td class="n">320 × 320</td><td class="n">170 × 170 desktop / 128 × 128 mobiel, rond</td><td>Zelfde zegel als op Instagram en Spotify. Nooit drie verschillende avatars.</td></tr>
+        <tr><td>Omslagfoto</td><td class="n">851 × 315 (sRGB JPG, &lt; 100 KB)</td><td class="n">820 × 312 desktop / 640 × 360 mobiel</td><td>Alles wat telt in de <strong>centrale 640 × 312</strong>. Linksonder blijft leeg (profielfoto).</td></tr>
+        <tr><td>Feedpost</td><td class="n">1080 × 1350 of 1080 × 1080</td><td class="n">volle breedte</td><td>4:5 voor maximale hoogte, 1:1 als je hetzelfde bestand op IG gebruikt.</td></tr>
+        <tr><td>Linkvoorbeeld (og:image)</td><td class="n">1200 × 630</td><td class="n">1.91:1, &lt; 8 MB</td><td>Enkel te sturen via je eigen site. Spotify-links tonen Spotify's eigen beeld.</td></tr>
+        <tr><td>Eventomslag</td><td class="n">1920 × 1005</td><td class="n">1.91:1, mobiel smaller</td><td>Datum + venue in de middelste 60%. Geen tekst in de buitenste 15%.</td></tr>
+        <tr><td>Story</td><td class="n">1080 × 1920</td><td class="n">9:16</td><td>Hergebruik de Instagram-story één op één.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="grid g2" style="margin-top:26px">
+      <div>
+        <h3 style="color:var(--gold)">Omslagfoto — veilige zone</h3>
+        <div style="position:relative;aspect-ratio:851/315;border:1px solid rgba(192,138,59,.5);overflow:hidden;background:#0B0A09">
+          <span class="im i-epcover" role="img" aria-label="Facebook omslagfoto" style="position:absolute;inset:0;width:100%;height:100%;background-position:center 40%"></span>
+          <div style="position:absolute;top:0;bottom:0;left:0;width:24.8%;background:repeating-linear-gradient(45deg,rgba(228,46,34,.55) 0 7px,rgba(228,46,34,.22) 7px 14px)"></div>
+          <div style="position:absolute;top:0;bottom:0;right:0;width:24.8%;background:repeating-linear-gradient(45deg,rgba(228,46,34,.55) 0 7px,rgba(228,46,34,.22) 7px 14px)"></div>
+          <div style="position:absolute;top:0;bottom:0;left:24.8%;right:24.8%;border:1.5px dashed var(--gold);display:flex;align-items:center;justify-content:center;font-family:'MonoG',monospace;font-size:10px;letter-spacing:.14em;color:var(--gold);text-align:center">VEILIG<br>640 × 312</div>
+          <div style="position:absolute;left:3%;bottom:-14%;width:22%;aspect-ratio:1;border-radius:50%;border:2px solid var(--bone);background:#0B0A09;display:flex;align-items:center;justify-content:center;font-family:'MonoG',monospace;font-size:8px;color:var(--gold)">AVATAR</div>
+        </div>
+        <div class="legend"><span><i style="background:repeating-linear-gradient(45deg,rgba(228,46,34,.55) 0 4px,rgba(228,46,34,.22) 4px 8px)"></i>kan wegvallen op mobiel</span><span><i style="border:1.5px dashed var(--gold)"></i>altijd zichtbaar</span></div>
+        <ul class="small" style="margin-top:14px">
+          <li>Zet het wordmark <strong>gecentreerd</strong>, niet links — daar staat op desktop je profielfoto overheen.</li>
+          <li>Gebruik een <strong>brede uitsnede van het artwork</strong> met veel grondkleur, geen bijgesneden kop.</li>
+          <li>Export als sRGB JPG onder 100 KB: Facebook comprimeert grotere bestanden harder dan jij dat zelf doet.</li>
+          <li>Wissel de omslag per releasefase: aankondiging → releaseweek → tourdata.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="color:var(--gold)">Eventomslag — 1920 × 1005</h3>
+        <div style="position:relative;aspect-ratio:1.91;border:1px solid rgba(192,138,59,.5);overflow:hidden;background:var(--void);display:flex;align-items:center">
+          <span class="im i-blood" role="img" aria-label="Facebook eventomslag" style="position:absolute;inset:0;width:100%;height:100%;background-position:62% 26%;opacity:.95"></span>
+          <div style="position:absolute;left:0;top:0;bottom:0;width:52%;background:linear-gradient(90deg,rgba(11,10,9,.94) 55%,rgba(11,10,9,0))"></div>
+          <div style="position:relative;padding:0 6%;max-width:56%">
+            <div class="mono" style="font-size:9px;letter-spacing:.2em;color:var(--gold)">GINDER LIVE</div>
+            <div class="arch" style="font-size:clamp(13px,2.4vw,24px);color:var(--bone);margin:6px 0 4px;line-height:1.05">We brought<br>the storm inside</div>
+            <div class="arch" style="font-size:clamp(10px,1.7vw,15px);color:var(--red)">14.11.2026 — BRUSSEL</div>
+          </div>
+        </div>
+        <ul class="small" style="margin-top:14px">
+          <li>Vaste opbouw: <strong>zwart vlak links</strong> met de tekst, artwork rechts. Altijd dezelfde indeling, zodat elk event herkenbaar is.</li>
+          <li>Datumnotatie: <span class="mono">14.11.2026</span> — punten, geen slashes, altijd 4 cijfers voor het jaar.</li>
+          <li>Venue in hoofdletters achter een em-streepje.</li>
+          <li>De omslag kan ná publicatie niet meer geschaald worden: check de uitsnede in het voorbeeld vóór je opslaat.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dd" style="margin-top:24px">
+      <div class="do">
+        <h4>Facebook-ritme</h4>
+        <ul>
+          <li class="ok">Eén post per week in de aanloop; dagelijks enkel in de releaseweek.</li>
+          <li class="ok">Elk event krijgt een eigen omslag — nooit dezelfde foto voor drie shows.</li>
+          <li class="ok">Links naar Bandcamp/eigen site met een eigen og:image van 1200 × 630.</li>
+          <li class="ok">Crosspost naar Instagram enkel als de ratio klopt; anders apart exporteren.</li>
+        </ul>
+      </div>
+      <div class="dont">
+        <h4>Facebook-zonden</h4>
+        <ul>
+          <li>Een 9:16-story als feedfoto posten (wordt meedogenloos bijgesneden).</li>
+          <li>Tekst in de buitenste 15% van een omslag of event.</li>
+          <li>De omslagfoto als "poster" gebruiken met alle info in kleine letters.</li>
+          <li>PNG van 4 MB uploaden als omslag — traag en korrelig na compressie.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ X — EXPORT & WORKFLOW ============ -->
+<section id="s10" class="light grain grain-light">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="numeral">X</div>
+      <div>
+        <h2 class="sect-title">Export, naamgeving &amp; workflow</h2>
+        <p class="meta dim">Eén map, één naamregel, één set exports. Zo vindt iedereen in de band binnen tien seconden het juiste bestand.</p>
+      </div>
+    </div>
+
+    <h3>Exportvoorkeuren</h3>
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>Asset</th><th>Px</th><th>Formaat</th><th>Kleur</th><th>Max</th></tr></thead>
+      <tbody>
+        <tr><td>Release cover (distributeur)</td><td class="n">3000 × 3000</td><td class="n">JPG kwaliteit 11–12</td><td class="n">sRGB</td><td class="n">10 MB</td></tr>
+        <tr><td>Spotify Canvas</td><td class="n">1080 × 1920</td><td class="n">MP4 H.264, geen audio</td><td class="n">sRGB</td><td class="n">15 MB</td></tr>
+        <tr><td>Spotify avatar / header</td><td class="n">1500 × 1500 / 2660 × 1140</td><td class="n">JPG</td><td class="n">sRGB</td><td class="n">20 MB</td></tr>
+        <tr><td>IG feed</td><td class="n">1080 × 1350</td><td class="n">JPG kwaliteit 10</td><td class="n">sRGB</td><td class="n">30 MB</td></tr>
+        <tr><td>IG/FB story &amp; reel</td><td class="n">1080 × 1920</td><td class="n">JPG / MP4 H.264</td><td class="n">sRGB</td><td class="n">—</td></tr>
+        <tr><td>FB omslag</td><td class="n">851 × 315</td><td class="n">JPG kwaliteit 8</td><td class="n">sRGB</td><td class="n">100 KB</td></tr>
+        <tr><td>FB event</td><td class="n">1920 × 1005</td><td class="n">JPG</td><td class="n">sRGB</td><td class="n">—</td></tr>
+        <tr><td>Linkvoorbeeld og:image</td><td class="n">1200 × 630</td><td class="n">JPG</td><td class="n">sRGB</td><td class="n">8 MB</td></tr>
+        <tr><td>Poster A2 (print)</td><td class="n">420 × 594 mm @300 dpi</td><td class="n">PDF/X-4</td><td class="n">CMYK + 3 mm afloop</td><td class="n">—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="small dim">Altijd exporteren vanaf het <strong>master-PNG</strong>. Nooit een JPG opnieuw opslaan als JPG — na twee rondes compressie zie je blokjes in de vlakke grondkleuren, precies waar GINDER het meest kwetsbaar is.</p>
+
+    <div class="grid g2" style="margin-top:28px">
+      <div>
+        <h3>Naamgeving</h3>
+        <div class="card" style="background:var(--void);color:var(--bone);border-color:rgba(192,138,59,.5)">
+          <div class="mono" style="font-size:13px;color:var(--gold);line-height:1.8">GINDER_&lt;release&gt;_&lt;asset&gt;_&lt;BxH&gt;_v&lt;NN&gt;.&lt;ext&gt;</div>
+          <div class="rule" style="margin:16px 0"></div>
+          <div class="mono small" style="line-height:1.9;opacity:.85">
+            GINDER_gospel_cover_3000x3000_v03.jpg<br>
+            GINDER_gospel_canvas-gobekli_1080x1920_v02.mp4<br>
+            GINDER_gospel_igfeed-tracklist_1080x1350_v01.jpg<br>
+            GINDER_live-brussel_fbevent_1920x1005_v01.jpg<br>
+            GINDER_evergreen_avatar-zegel_1500x1500_v01.png
+          </div>
+        </div>
+        <ul class="small" style="margin-top:14px">
+          <li>Alles in kleine letters behalve <span class="mono">GINDER</span>.</li>
+          <li>Geen spaties, geen accenten, geen "final_final2".</li>
+          <li>Versienummer altijd twee cijfers; de hoogste is de geldige.</li>
+          <li><span class="mono">evergreen</span> = niet aan één release gebonden.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Mapstructuur</h3>
+        <div class="card" style="background:var(--void);color:var(--bone);border-color:rgba(192,138,59,.5)">
+          <div class="mono small" style="line-height:1.85;color:var(--bone)">
+GINDER/<br>
+├── 00_brand/ <span style="opacity:.5">(deze gids, fonts, logo's, palet)</span><br>
+├── 01_masters/ <span style="opacity:.5">(artwork op volle resolutie, PNG)</span><br>
+├── 02_crops/ <span style="opacity:.5">(goedgekeurde 1:1, 4:5, 3:4, 9:16)</span><br>
+├── 03_release_gospel/<br>
+│&nbsp;&nbsp;&nbsp;├── spotify/<br>
+│&nbsp;&nbsp;&nbsp;├── instagram/<br>
+│&nbsp;&nbsp;&nbsp;├── facebook/<br>
+│&nbsp;&nbsp;&nbsp;└── press/ <span style="opacity:.5">(bio, foto's, one-sheet)</span><br>
+├── 04_live/ <span style="opacity:.5">(per show: event, flyer, posters)</span><br>
+└── 05_archive/
+          </div>
+        </div>
+        <p class="small dim" style="margin-top:12px">Eén bron van waarheid. Staat een bestand niet in deze structuur, dan bestaat het niet — ook niet in een chatgesprek.</p>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <h3>Releasevolgorde</h3>
+    <div class="card" style="background:var(--void);color:var(--bone);border-color:rgba(192,138,59,.5);margin:14px 0 26px">
+      <div class="kv" style="color:var(--bone)"><b style="color:var(--gold)">Single 1</b><span><strong>We brought the storm inside and called it gospel</strong> — titeltrack, eigen artwork (de gehoornde kop)</span></div>
+      <div class="kv" style="color:var(--bone)"><b style="color:var(--gold)">Single 2</b><span>Göbekli Tepe</span></div>
+      <div class="kv" style="color:var(--bone)"><b style="color:var(--gold)">Single 3</b><span>Blood Meridian</span></div>
+      <div class="kv" style="color:var(--bone)"><b style="color:var(--gold)">Daarna</b><span>de EP — zelfde titel als single 1, maar met de <strong>EP-cover</strong> (de roofvogel met de bandnaam)</span></div>
+      <p class="small" style="color:var(--bone);margin:12px 0 0">De kalender hieronder geldt per single. Laat er minstens vier weken tussen, en wissel de grondkleur: bone → blush → ash. Zo voelt de reeks als één plaat in plaats van drie losse posts.</p>
+    </div>
+
+    <h3>Releasekalender &amp; assetlijst <span class="small dim" style="font-family:'MonoG',monospace;text-transform:none;letter-spacing:0">— per single</span></h3>
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>Moment</th><th>Wat</th><th>Assets</th></tr></thead>
+      <tbody>
+        <tr><td class="n">−6 weken</td><td>Levering distributeur</td><td>Cover 3000² van díé single, metadata, bio, perssheet</td></tr>
+        <tr><td class="n">−4 weken</td><td>Profielen klaarzetten</td><td>Avatar (zegel), Spotify-header, FB-omslag, IG-highlights</td></tr>
+        <tr><td class="n">−3 weken</td><td>Aankondiging</td><td>IG-carrousel (6 slides), FB-post 1:1, story-set van 3, pre-save-link</td></tr>
+        <tr><td class="n">−2 weken</td><td>Teaser</td><td>Reel 9:16 (detailcrop + geluid), lyric card 4:5 met de sleutelregel van díé track</td></tr>
+        <tr><td class="n">−1 week</td><td>Countdown</td><td>3 stories met datum op zwarte balk, FB-event voor de release show</td></tr>
+        <tr><td class="n">Releasedag</td><td>Out now</td><td>Artwork 1:1 onbewerkt, Canvas live, reel, story met link-sticker, FB-omslag wisselen. Caption = de sleutelregel, niets meer</td></tr>
+        <tr><td class="n">+1 week</td><td>Tweede leven</td><td>Credits-post, detailcrops, fanreposts, playlistcover, <strong>songteksten syncen in Musixmatch</strong></td></tr>
+        <tr><td class="n">+3 weken</td><td>Live &amp; merch</td><td>Eventomslagen, posters A2, merchfoto's in het palet</td></tr>
+        <tr><td class="n">+4 weken</td><td>Volgende single</td><td>Van voren af aan, met de volgende grondkleur. Na single 3: de EP, met de EP-cover</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ XI — TONE OF VOICE ============ -->
+<section id="s11" class="blush grain grain-light">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="numeral">XI</div>
+      <div>
+        <h2 class="sect-title">Stem &amp; tekst</h2>
+        <p class="meta dim">Kort, droog, liturgisch. GINDER verkoopt niets — GINDER kondigt aan. De songteksten zijn het enige materiaal dat je nodig hebt: ze zijn al kort genoeg.</p>
+      </div>
+    </div>
+
+    <div class="card" style="background:var(--void);color:var(--bone);border-color:rgba(192,138,59,.5);margin-bottom:24px">
+      <span class="lbl" style="color:var(--gold)">De plaat in drie regels</span>
+      <p class="small" style="color:var(--bone);margin:0 0 14px;max-width:78ch">Elke track heeft één regel die alles draagt. Die regel is de campagneregel van die track: hij staat op de lyric card, hij is de caption, hij is de merchprint. Gebruik er nooit twee door elkaar in één post.</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Track</th><th>Sleutelregel</th><th>Wat ze draagt</th><th>Waar</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1 — titeltrack</strong></td><td class="n" style="color:var(--red)">We all want to be saved</td><td>de thesis van de plaat — iedereen, zonder uitzondering</td><td>eerste single, hero-ad, pers, EP-releasedag</td></tr>
+          <tr><td>2 — Göbekli Tepe</td><td class="n" style="color:var(--red)">Everything is change</td><td>vergankelijkheid, opgraven, niets blijft liggen</td><td>tweede single, merch</td></tr>
+          <tr><td>3 — Blood Meridian</td><td class="n" style="color:var(--red)">Stay forever, in gold</td><td>devotie, geen romantiek — bewaren wat al rot is</td><td>derde single, stories, vinyl-sticker</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="small" style="color:var(--bone);margin:14px 0 0"><strong style="color:var(--gold)">EP-regel:</strong> <span style="color:var(--red)">We all want to be saved.</span> Dat is de zin die op een poster mag staan zonder bandnaam. Alles wat je schrijft, mag erheen leiden — niets mag hem uitleggen.</p>
+    </div>
+
+    <div class="grid g3">
+      <div class="card"><span class="lbl">Toon</span><p class="small" style="margin:0">Alsof een misdienaar het nieuws voorleest. Declaratief, zonder uitroeptekens, zonder "we zijn zo blij om eindelijk te kunnen aankondigen".</p></div>
+      <div class="card"><span class="lbl">Lengte</span><p class="small" style="margin:0">Captions van 1 tot 3 regels. De tekst vult nooit de ruimte die het beeld al vult.</p></div>
+      <div class="card"><span class="lbl">Taal</span><p class="small" style="margin:0">Engels voor titels, bio en pers. Nederlands mag in captions richting het thuispubliek — nooit twee talen in dezelfde zin.</p></div>
+    </div>
+
+    <div class="grid g2" style="margin-top:24px">
+      <div class="card" style="background:var(--void);color:var(--bone);border-color:rgba(192,138,59,.5)">
+        <span class="lbl" style="color:var(--gold)">Bio — kort (≤ 150 tekens)</span>
+        <p class="small copytext" style="color:var(--bone)">GINDER — three songs about devotion, violence and the joke in between. EP: We brought the storm inside and called it gospel.</p>
+        <button class="copybtn" style="margin-top:4px">kopieer</button>
+      </div>
+      <div class="card" style="background:var(--void);color:var(--bone);border-color:rgba(192,138,59,.5)">
+        <span class="lbl" style="color:var(--gold)">Bio — Spotify (± 500 tekens)</span>
+        <p class="small copytext" style="color:var(--bone)">GINDER build their songs like altarpieces: flat, frontal and a little too loud. The debut EP <em style="color:var(--red)">We brought the storm inside and called it gospel</em> holds three of them — Göbekli Tepe, the title track, and Blood Meridian — each with its own icon, its own colour and its own set of eyes. Devotion, violence, and the joke standing between the two.</p>
+        <button class="copybtn" style="margin-top:4px">kopieer</button>
+      </div>
+    </div>
+
+    <h3 style="margin-top:34px">Lyric cards</h3>
+    <div class="grid g2" style="margin-top:14px;align-items:start">
+      <div>
+        <ul>
+          <li><strong>Eén regel per kaart.</strong> Maximaal acht woorden. Komt de regel niet in twee tekstregels? Dan is het de verkeerde regel.</li>
+          <li><strong>Citeer exact</strong> — zelfde woorden, zelfde interpunctie, zelfde kleine letters. Nooit parafraseren, nooit hoofdletters toevoegen "voor de nadruk".</li>
+          <li><strong>Geen aanhalingstekens.</strong> De kaart ís het citaat.</li>
+          <li>Tekst in <strong>Archivo Black</strong>, de tracktitel eronder in mono op 9–11 px. Pirata One alleen voor de tracktitel, nooit voor de regel zelf.</li>
+          <li>Grondkleur = de kleur van die track. Tekst = zwart op blush/bot/as, bot op zwart. Nooit rood op kleur.</li>
+          <li><strong>Geen artwork onder de tekst.</strong> Een lyric card is een vlak, geen beeld met een onderschrift.</li>
+          <li>Voor een story: zet de regel in de centrale 1080 × 1330 px, niet onderaan waar de interface zit.</li>
+        </ul>
+      </div>
+      <div class="grid g3" style="gap:12px">
+        <figure style="margin:0">
+          <div class="crop r45" style="background:var(--void);display:flex;align-items:flex-end;padding:14px">
+            <div style="position:relative">
+              <div class="arch" style="font-size:clamp(13px,1.7vw,19px);color:var(--bone)">We all want<br>to be saved</div>
+              <div class="mono" style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(212,186,150,.5);margin-top:9px">titeltrack</div>
+            </div>
+          </div>
+          <figcaption class="caption">1 — zwart + bot</figcaption>
+        </figure>
+        <figure style="margin:0">
+          <div class="crop r45" style="background:var(--blush);display:flex;align-items:flex-end;padding:14px">
+            <div style="position:relative">
+              <div class="arch" style="font-size:clamp(13px,1.7vw,19px);color:var(--void)">Everything<br>is change</div>
+              <div class="mono" style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,10,9,.55);margin-top:9px">Göbekli Tepe</div>
+            </div>
+          </div>
+          <figcaption class="caption">2 — blush + zwart</figcaption>
+        </figure>
+        <figure style="margin:0">
+          <div class="crop r45" style="background:var(--ash);display:flex;align-items:flex-end;padding:14px">
+            <div style="position:relative">
+              <div class="arch" style="font-size:clamp(13px,1.7vw,19px);color:var(--void)">Stay forever,<br>in gold</div>
+              <div class="mono" style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,10,9,.55);margin-top:9px">Blood Meridian</div>
+            </div>
+          </div>
+          <figcaption class="caption">3 — as + zwart</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <h3 style="margin-top:34px">Captionsjablonen</h3>
+    <div class="grid g3" style="margin-top:14px">
+      <div class="card">
+        <span class="lbl">Aankondiging</span>
+        <p class="small copytext" style="margin:0">Three songs. One storm.<br>EP — 14.11.2026.<br>Pre-save in bio.</p>
+        <button class="copybtn" style="margin-top:10px">kopieer</button>
+      </div>
+      <div class="card">
+        <span class="lbl">Releasedag</span>
+        <p class="small copytext" style="margin:0">We brought the storm inside and called it gospel.<br>Out everywhere.<br>Play it loud, play it twice.</p>
+        <button class="copybtn" style="margin-top:10px">kopieer</button>
+      </div>
+      <div class="card">
+        <span class="lbl">Live</span>
+        <p class="small copytext" style="margin:0">GINDER live — 14.11.2026, Brussel.<br>Doors 20:00. Tickets via link.</p>
+        <button class="copybtn" style="margin-top:10px">kopieer</button>
+      </div>
+    </div>
+
+    <div class="grid g3" style="margin-top:14px">
+      <div class="card">
+        <span class="lbl" style="color:var(--gold)">Teaser — single 1</span>
+        <p class="small copytext" style="margin:0">We all want to be saved.<br>Title track. 14.11.2026.</p>
+        <button class="copybtn" style="margin-top:10px">kopieer</button>
+      </div>
+      <div class="card">
+        <span class="lbl">Teaser — single 2</span>
+        <p class="small copytext" style="margin:0">Everything is change.<br>Göbekli Tepe — 14.11.2026.</p>
+        <button class="copybtn" style="margin-top:10px">kopieer</button>
+      </div>
+      <div class="card">
+        <span class="lbl">Teaser — single 3</span>
+        <p class="small copytext" style="margin:0">Stay forever, in gold.<br>Blood Meridian — 14.11.2026.</p>
+        <button class="copybtn" style="margin-top:10px">kopieer</button>
+      </div>
+    </div>
+    <p class="small dim" style="margin-top:10px">Eén regel, één datum, geen uitleg. Zet er nooit "nieuwe single" of "check it out" bij: de regel doet het werk.</p>
+
+    <div class="grid g2" style="margin-top:26px">
+      <div class="dd" style="grid-template-columns:1fr">
+        <div class="do">
+          <h4>Woorden die passen</h4>
+          <p class="small" style="margin:0">gospel · storm · devotion · icon · relic · procession · teeth · yonder · altar · noise · ritual</p>
+          <p class="small" style="margin:10px 0 0"><strong>Uit de teksten zelf</strong> — het veiligste woordenboek dat er is: change · mud · dirt · tombs · veil · sacrifice · carbon · wires · code · maze · beggars · guards · saved · rot · wolves · gold · glow</p>
+          <p class="small dim" style="margin:10px 0 0">"Ginder" betekent <em>daarginds</em> — de plek net buiten beeld. Dat is een cadeau voor je teksten: alles komt <strong>van ginder</strong>.</p>
+        </div>
+      </div>
+      <div class="dd" style="grid-template-columns:1fr">
+        <div class="dont">
+          <h4>Woorden die niet passen</h4>
+          <p class="small" style="margin:0">insane · banger · 🔥🔥 · "out now!!!" · "link in bio guys" · "we zijn super trots" · "vergeet niet te liken en te delen" · "new music alert"</p>
+          <p class="small dim" style="margin:10px 0 0">Eén emoji per post is het maximum, en alleen als symbool (🜂 ✝ 👁), nooit als reactie.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:22px">
+      <span class="lbl">Vaste schrijfwijzen</span>
+      <div class="kv"><b>Bandnaam</b><span>GINDER — altijd in hoofdletters in lopende tekst</span></div>
+      <div class="kv"><b>EP-titel</b><span>We brought the storm inside and called it gospel — zin-hoofdletter, geen aanhalingstekens</span></div>
+      <div class="kv"><b>Tracks</b><span>Göbekli Tepe (mét trema) · We brought the storm inside and called it gospel · Blood Meridian</span></div>
+      <div class="kv"><b>Datums</b><span>14.11.2026 — nooit 14/11 of November 14th</span></div>
+      <div class="kv"><b>Uren</b><span>20:00 — 24-uursnotatie</span></div>
+      <div class="kv"><b>Hashtags</b><span>#GINDER #WeBroughtTheStormInside #BloodMeridian — max 5</span></div>
+      <div class="kv"><b>Korte vorm</b><span>intern heet de titeltrack <span class="mono">storm</span> (bestandsnamen, setlist). <span class="mono">WBTSIACIG</span> blijft binnenskamers — nooit in een caption of op een platform</span></div>
+    </div>
+
+    <div class="card" style="margin-top:22px;border-color:var(--red);background:rgba(228,46,34,.07)">
+      <span class="lbl" style="color:#9E180E">Songtekstblad — vóór je iets instuurt</span>
+      <ul style="margin-bottom:0">
+        <li><strong>Eén bronbestand</strong> met de drie teksten, UTF-8, platte tekst, in <span class="mono">00_brand/</span>. Alles — lyric cards, video, pers, Musixmatch — vertrekt daarvandaan.</li>
+        <li><strong>Tikfout in het refrein van Blood Meridian:</strong> in de aangeleverde tekst staat één keer <span class="mono">Bliod</span> in plaats van <span class="mono">Blood</span>. Corrigeer dat in de bron vóór het ergens terechtkomt.</li>
+        <li><strong>Göbekli Tepe met trema</strong> — ook in het songtekstblad, de metadata en de bestandsnaam van het tekstbestand.</li>
+        <li>Geen volledige tekst in een caption of op een beeld. Eén regel is een statement, zestien regels is een screenshot.</li>
+        <li>Herhalingen uitschrijven zoals ze gezongen worden, niet afkorten met <span class="mono">(2x)</span> — dat leest een syncsysteem niet.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ XII — DON'TS ============ -->
+<section id="s12" class="dark grain">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="numeral">XII</div>
+      <div>
+        <h2 class="sect-title">De twaalf geboden</h2>
+        <p class="meta dim">Als je maar één scherm uit deze gids onthoudt, dan dit.</p>
+      </div>
+    </div>
+    <div class="grid g2">
+      <div class="card" style="border-color:var(--gold)">
+        <span class="lbl" style="color:var(--gold)">Altijd</span>
+        <ul>
+          <li class="ok">Grondkleur tot aan de rand — nooit zwart aan de buitenrand van een vierkant asset.</li>
+          <li class="ok">Eén figuur, één rode schreeuw, veel leegte.</li>
+          <li class="ok">Zwart op grondkleur, of bot/goud op zwart. Niets anders voor tekst.</li>
+          <li class="ok">Het logotype voor de bandnaam, Pirata One voor tracktitels, Archivo Black voor alles wat schreeuwt.</li>
+          <li class="ok">Exporteren vanaf de master, in sRGB, met de juiste bestandsnaam.</li>
+          <li class="ok">Elke cover testen op 64 px vóór hij de deur uit gaat.</li>
+        </ul>
+      </div>
+      <div class="card" style="border-color:var(--red)">
+        <span class="lbl" style="color:var(--red)">Nooit</span>
+        <ul>
+          <li>Artwork uitrekken, spiegelen of filteren.</li>
+          <li>URL's, handles, QR-codes of "out now" op cover art.</li>
+          <li>Tekst over een gezicht, kop of oog.</li>
+          <li>Slagschaduw, glow, outline of verloop — op niets.</li>
+          <li>Een vijfde lettertype of een nieuwe kleur introduceren.</li>
+          <li>Een asset posten waarvan je de naam niet kunt uitspreken volgens de naamregel.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:34px">
+      <div class="card" style="border-color:rgba(192,138,59,.45)">
+        <span class="lbl" style="color:var(--gold)">In deze levering</span>
+        <div class="kv"><b>Stijlgids</b><span>GINDER_stijlgids.html — losstaand bestand, werkt offline</span></div>
+        <div class="kv"><b>00_brand/</b><span>GINDER_logotype_kleur.png (transparant, 1673 × 434)</span></div>
+        <div class="kv"><b>00_brand/</b><span>GINDER_logotype_goud.png · _bot.png · _zwart.png (1-kleur)</span></div>
+        <div class="kv"><b>00_brand/</b><span>GINDER_zegel_1500.png — het zegel, master met transparantie</span></div>
+        <div class="kv"><b>00_brand/avatars/</b><span>kant-en-klare profielfoto's: Spotify 1500², Instagram en Facebook 1080² — plat op zwart, schijf op 94 % zodat de ronde uitsnede de ring niet afsnijdt</span></div>
+        <div class="kv"><b>00_brand/logotype_kit/</b><span>zes platformvlakken × vier gronden (Spotify-header, playlistcover, IG-post en story, FB-omslag en og:image) + de vier logotypeversies transparant op maat</span></div>
+        <div class="kv"><b>00_brand/storm_kit/</b><span>alle platformformaten uit het single-artwork van de titeltrack — 21 bestanden, per platform gesorteerd, paneelmethode; cover nog op 1254 px</span></div>
+        <div class="kv"><b>00_brand/</b><span>GINDER_palet.txt — alle hexwaarden en contrastregels</span></div>
+        <div class="kv"><b>00_brand/</b><span>GINDER_songteksten.txt — de drie teksten, één bron, tikfout gecorrigeerd</span></div>
+        <div class="kv"><b>02_crops/</b><span><strong>20 vaste uitsnedes</strong> — vier artworks (3 singles + EP-cover) maal vier ratio's (1:1 · 4:5 · 3:4 · 9:16) op 1080 px, de 1:1 ook op 3000 px</span></div>
+        <div class="kv"><b>02_crops/hires/</b><span><strong>9 verticale crops op 2160 px</strong> voor print en video — Göbekli, Blood en de EP-cover. De single ontbreekt hier tot de hi-res master er is</span></div>
+        <div class="kv"><b>02_crops/</b><span>GINDER_crops_overzicht.jpg + LEESMIJ.txt — wat hoort waar</span></div>
+        <p class="small dim" style="margin:12px 0 0">Fonts haal je via de links in hoofdstuk IV. Bewaar een kopie in <span class="mono">00_brand/</span>.</p>
+      </div>
+      <div class="card" style="border-color:rgba(192,138,59,.45);background:rgba(192,138,59,.07)">
+      <h3 style="color:var(--gold)">Nog openstaand</h3>
+      <ul>
+        <li><strong>Het single-artwork van de titeltrack hermasteren op 3000 × 3000.</strong> Het staat nu op 1254 px en dat is de eerste release — dit is het dringendste punt van de lijst.</li>
+        <li><strong>Drie Canvassen maken</strong> (4–6 s, stil, naadloze loop) — één per track, vertrekkend van de 9:16-crop die klaarligt.</li>
+        <li><strong>Logotype vectoriseren</strong> (of opnieuw renderen op ≥ 6000 px breed). De huidige 1673 px volstaat niet voor posters, vinyl, backdrops of borduur.</li>
+        <li><strong>Zegel-avatar</strong> (1500 × 1500, staat klaar in <span class="mono">00_brand/</span>) op alle drie de platformen zetten.</li>
+        <li><strong>Persfoto's</strong> in dit palet schieten: egale grondkleur als achtergrond, frontaal, geen bakstenen muur.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:var(--void);border-top:1px solid rgba(192,138,59,.35);padding:52px 0 70px;position:relative">
+  <div class="wrap" style="display:flex;gap:30px;flex-wrap:wrap;align-items:flex-end;justify-content:space-between">
+    <div>
+      <span class="logo l-gold" role="img" aria-label="GINDER" style="width:240px"></span>
+      <p class="mono" style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin:16px 0 0">
+        Visuele stijlgids v1.0 — oktober 2026<br>
+        Kleurwaarden gesampled uit de drie originele artworks<br>
+        Fonts: Pirata One · Archivo Black · Inter · Space Mono (SIL OFL)
+      </p>
+    </div>
+    <div style="display:flex;gap:6px">
+      <span style="width:34px;height:34px;background:#0B0A09;border:1px solid #C08A3B"></span>
+      <span style="width:34px;height:34px;background:#E42E22"></span>
+      <span style="width:34px;height:34px;background:#C08A3B"></span>
+      <span style="width:34px;height:34px;background:#D4BA96"></span>
+      <span style="width:34px;height:34px;background:#DD8B72"></span>
+      <span style="width:34px;height:34px;background:#BDA997"></span>
+      <span style="width:34px;height:34px;background:#2161B1"></span>
+    </div>
+  </div>
+  <svg style="display:block;width:100%;height:22px;margin-top:40px" viewBox="0 0 1200 28" preserveAspectRatio="none" aria-hidden="true"><g fill="#E42E22">__SPIKEROW__</g></svg>
+</footer>
+
+<div id="toast" style="position:fixed;left:50%;bottom:26px;transform:translate(-50%,120%);background:var(--red);
+  color:#0B0A09;font-family:'MonoG',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  padding:11px 18px;z-index:99;transition:transform .25s,opacity .2s;opacity:0;visibility:hidden;pointer-events:none">gekopieerd</div>
+
+<script>
+(function(){
+  var toast=document.getElementById('toast'),t;
+  function say(m){toast.textContent=m;toast.style.visibility='visible';toast.style.opacity='1';
+    toast.style.transform='translate(-50%,0)';clearTimeout(t);
+    t=setTimeout(function(){toast.style.transform='translate(-50%,120%)';toast.style.opacity='0';
+      setTimeout(function(){toast.style.visibility='hidden'},250);},1400);}
+  function copy(txt,msg){
+    var done=function(){say(msg)};
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(done).catch(function(){fallback(txt,done)});
+    } else fallback(txt,done);
+  }
+  function fallback(txt,done){
+    var ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';
+    document.body.appendChild(ta);ta.select();
+    try{document.execCommand('copy');done();}catch(e){say('selecteer en kopieer handmatig');}
+    document.body.removeChild(ta);
+  }
+  document.querySelectorAll('.sw').forEach(function(b){
+    b.addEventListener('click',function(){copy(b.dataset.hex,b.dataset.hex+' gekopieerd')});
+  });
+  document.querySelectorAll('.copybtn').forEach(function(b){
+    b.style.cssText='font-family:MonoG,monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;'+
+      'background:none;border:1px solid currentColor;color:inherit;padding:6px 10px;cursor:pointer;opacity:.75';
+    b.addEventListener('click',function(){
+      var p=b.parentNode.querySelector('.copytext');
+      copy(p.innerText.trim(),'tekst gekopieerd');
+    });
+  });
+  var links=[].slice.call(document.querySelectorAll('#rail a'));
+  var secs=links.map(function(a){return document.getElementById(a.dataset.t)});
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(l){l.classList.remove('on')});
+        var i=secs.indexOf(e.target); if(i>-1) links[i].classList.add('on');
+      }
+    });
+  },{rootMargin:'-45% 0px -50% 0px'});
+  secs.forEach(function(s){if(s)io.observe(s)});
+})();
+</script>
+</body>
+</html>
